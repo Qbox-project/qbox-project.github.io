@@ -2,14 +2,14 @@ import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
-  logo: <span>My Project</span>,
+  logo: <span>Qbox</span>,
   project: {
-    link: 'https://github.com/shuding/nextra-docs-template',
+    link: 'https://github.com/Qbox-project',
   },
   chat: {
-    link: 'https://discord.com',
+    link: 'https://discord.gg/qbox',
   },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
+  docsRepositoryBase: 'https://github.com/Qbox-project/qbox-docs',
   footer: {
     text: 'Nextra Docs Template',
   },
