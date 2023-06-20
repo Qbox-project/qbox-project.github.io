@@ -1,0 +1,50 @@
+# Import
+
+In the core you will find an import.lua file.
+
+This file is used to import a module system into your resource.
+
+You can use it to manage certain modules from any resource.
+
+## Format
+
+The format for the modules has four ways to specify them:
+
+1. `'module_name'`
+2. `'side:module_name'`, `side` can be `client`, `server` or `shared`, if it's neither of them it defaults to shared.
+3. `'resource_name:module_name'`
+4. `'resource_name:side:module_name'`
+
+These four ways allow you to specify any module you want, as long as it's in a modules folder inside the specified resource.
+It defaults back to `qbx-core` if no resource is specified, meaning it will load it from qbx-core/modules/
+
+## Example
+
+You have a resource named 'test' and in that resource you have a folder called `modules` (mandatory for the modules to be found).
+
+Inside the modules folder you have a file named `hack.lua`.
+
+You can load this inside another resource you have, for example one named 'test_hack'.
+
+You can add the following to your fxmanifest.lua to then add the module in there:
+
+```lua
+shared_script '@qbx-core/import.lua'
+
+module 'test:hack'
+```
+
+or
+
+To specify multiple modules
+```lua
+shared_script '@qbx-core/import.lua'
+
+modules {
+    'test:hack',
+}
+```
+
+That code will now load the hack.lua inside the test/modules/ folder into the test_hack resource as it's own script.
+
+That means you can use it like any other script you have in your own resource.
