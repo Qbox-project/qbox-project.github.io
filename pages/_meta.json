@@ -4,5 +4,9 @@
   "about": {
     "title": "About",
     "type": "page"
-  }
+  },
+  "converting": "Converting from QB",
+  "contributors": "Contributing",
+  "faq": "FAQ",
+  "developers": "Developer's Guide"
 }
