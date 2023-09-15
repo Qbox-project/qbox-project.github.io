@@ -1,0 +1,5 @@
+{
+  "client": "Client",
+  "server": "Server",
+  "shared": "Shared"
+}
