@@ -1,0 +1,35 @@
+# Server
+
+## Module: utils
+
+
+### SpawnVehicle
+Deletes vehicle ped is in before spawning a new one
+
+```lua
+---@param source integer
+---@param model string | integer
+---@param coords? vector4 defaults to player's position
+---@param warp? boolean
+---@return integer? netId
+```
+
+
+### KickWithReason
+Kick Player
+
+```lua
+---@param source Source
+---@param reason string
+---@param setKickReason? fun(reason: string)
+---@param deferrals? Deferrals
+```
+
+
+### IsLicenseInUse
+Check for duplicate license
+
+```lua
+---@param license string
+---@return boolean
+```
