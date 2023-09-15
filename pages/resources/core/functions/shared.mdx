@@ -1,0 +1,112 @@
+# Shared
+
+## Module: utils
+
+
+### GetCoordsFromEntity
+Get the coords including the heading from an entity
+
+```lua
+---@param entity number
+---@return vector4
+```
+
+
+### GetPlate
+Returns the number plate of the specified vehicle
+
+```lua
+---@param vehicle integer
+---@return string?
+```
+
+
+### DebugPrint
+When sending a table, prints the contents of it, otherwise it prints the string directly
+
+```lua
+---@param value string | table
+---@param indent? integer
+```
+
+### CommaValue
+Converts a number to a string version with commas
+
+```lua
+---@param num number
+---@return string
+```
+
+
+### string.split
+Split a string by a character
+
+```lua
+---@param str string
+---@param delimiter string character
+---@return string[]
+```
+
+
+### string.trim
+Trim unwanted characters off the string
+
+```lua
+---@param str string
+---@return string?
+---@return number? count
+```
+
+
+### string.firstToUpper
+Returns a string with the first character uppercase'd
+
+```lua
+---@param str string
+---@return string?
+---@return number? count
+```
+
+
+### math.round
+Returns a rounded number
+
+```lua
+---@param value number
+---@param numDecimalPlaces integer
+---@return integer
+```
+
+
+### RandomLetter
+Returns a random letter
+
+```lua
+---@param length integer
+---@return string
+```
+
+
+### RandomNumber
+Returns a random number
+
+```lua
+---@param length integer
+---@return string
+```
+
+
+### RandomNumberOrLetter
+Returns a random number or letter
+
+```lua
+---@param length integer
+---@return string
+```
+
+
+### GenerateRandomPlate
+Generates a random number plate according to a pattern, [pattern format](https://docs.fivem.net/natives/?_0x79780FD2), [plate generation source](https://github.com/citizenfx/fivem/blob/cb97fbc54050e2309930128d6deed515d004a1bd/code/components/extra-natives-five/src/VehicleNumberPlateNatives.cpp#L25-L112)
+```lua
+---@return string
+```
