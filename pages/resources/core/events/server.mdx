@@ -1,1 +1,69 @@
+import { Callout } from 'nextra/components';
+
 # Server
+
+<Callout type="warning">
+  These events **MUST NOT** be triggered by any other scripts.
+</Callout>
+
+## Non-Networked Events
+
+### QBCore:Server:PlayerLoaded
+Player has finished loading
+
+```lua
+---@param player Player
+```
+
+### QBCore:Server:OnPlayerUnload
+Player begins process of logging out. No guarantee of whether player still exists in core memory at time event is triggered.
+
+```lua
+---@param src number
+```
+
+
+### QBCore:Server:OnPermissionUpdate
+Player's permissions are updated. Only applies to permissions created through QB permission functions.
+
+```lua
+---@param src number
+```
+
+### QBCore:Server:OnJobUpdate
+Player's job changes
+
+```lua
+---@param src number
+---@param job Job
+```
+
+
+### QBCore:Server:OnGangUpdate
+Player's gang changes
+
+```lua
+---@param src number
+---@param gang Gang
+```
+
+
+### QBCore:Server:SetDuty
+Player's duty changes
+
+```lua
+---@param src number
+---@param boolean onDuty
+``` 
+
+
+### QBCore:Server:OnMoneyChange
+Player's cash/bank balance changes
+
+```lua
+---@param src number
+---@param moneyType 'cash' | 'bank' | 'crypto'
+---@param amount number
+---@param operation 'add' | 'remove' | 'set'
+---@param reason string
+``` 
