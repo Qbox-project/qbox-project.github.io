@@ -1,6 +1,332 @@
 # Server
 
+## Exports
+called using exports['qbx-core']:\<FunctionName>
+
+### AddJob
+Single add job function which should only be used if you planning on adding a single job
+
+```lua
+---@param jobName string
+---@param job Job
+---@return boolean success
+---@return string message
+```
+
+
+### AddJobs
+Add multiple jobs
+
+```lua
+---@param jobs table<string, Job>
+---@return boolean success
+---@return string message
+---@return Job? errorJob job causing the error message. Only present if success is false.
+```
+
+
+### RemoveJob
+Single Remove Job
+
+```lua
+---@param jobName string
+---@return boolean success
+---@return string message
+```
+
+
+### UpdateJob
+-- Single Update Job
+
+```lua
+---@param jobName string
+---@param job Job
+---@return boolean success
+---@return string message
+```
+
+
+### AddGang
+Single Add Gang
+
+```lua
+---@param gangName string
+---@param gang Gang
+---@return boolean success
+---@return string message
+```
+
+
+### AddGangs
+Multiple Add Gangs
+
+```lua
+---@param gangs table<string, Gang>
+---@return boolean success
+---@return string message
+---@return Gang? errorGang present if success is false. Gang that caused the error message.
+```
+
+
+### RemoveGang
+Single Remove Gang
+
+```lua
+---@param gangName string
+---@return boolean success
+---@return string message
+```
+
+
+### UpdateGang
+Single Update Gang
+
+```lua
+---@param gangName string
+---@param gang Gang
+---@return boolean success
+---@return string message
+```
+
+
+### GetCoreVersion
+
+```lua
+---@param InvokingResource string
+---@return string version
+```
+
+
+### ExploitBan
+
+```lua
+---@param playerId Source server id
+---@param origin string reason
+```
+
+
+## Module: core
+called using QBCore.Functions.\<FunctionName>
+
+### GetSource
+
+```lua
+---@param identifier string
+---@return integer source of the player with the matching identifier or 0 if no player found
+```
+
+
+### GetPlayer
+
+```lua
+---@param source Source|string source or identifier of the player
+---@return Player
+```
+
+
+### GetPlayerByCitizenId
+
+```lua
+---@param citizenid string
+---@return Player?
+```
+
+
+### GetOfflinePlayerByCitizenId
+
+```lua
+---@param citizenid string
+---@return Player?
+```
+
+
+### GetPlayerByPhone
+
+```lua
+---@param number string
+---@return Player?
+```
+
+
+### GetQBPlayers
+Will return an array of QB Player class instances, unlike the GetPlayers() wrapper which only returns IDs
+
+```lua
+---@return table<Source, Player>
+```
+
+
+### GetDutyCountJob
+Gets a list of all on duty players of a specified job and the number
+
+```lua
+---@param job string name
+---@return integer
+---@return Source[]
+```
+
+
+### GetDutyCountType
+Gets a list of all on duty players of a specified job type and the number
+
+```lua
+---@param type string
+---@return integer
+---@return Source[]
+```
+
+
+### GetBucketObjects
+Returns the objects related to buckets, first returned value is the player buckets, second one is entity buckets
+
+```lua
+---@return table
+---@return table
+```
+
+
+### SetPlayerBucket
+Will set the provided player id / source into the provided bucket id
+
+```lua
+---@param source Source
+---@param bucket integer
+---@return boolean
+```
+
+
+### SetEntityBucket
+Will set any entity into the provided bucket, for example peds / vehicles / props / etc.
+
+```lua
+---@param entity integer
+---@param bucket integer
+---@return boolean
+```
+
+
+### GetPlayersInBucket
+Will return an array of all the player ids inside the current bucket
+
+```lua
+---@param bucket integer
+---@return Source[]|boolean
+```
+
+
+### GetEntitiesInBucket
+Will return an array of all the entities inside the current bucket (not for player entities, use GetPlayersInBucket for that)
+
+```lua
+---@param bucket integer
+---@return boolean | integer[]
+```
+
+
+### CreateUseableItem
+
+```lua
+---@param item string name
+---@param data fun(source: Source, item: unknown)
+```
+
+
+### CanUseItem
+
+```lua
+---@param item string name
+---@return unknown
+```
+
+
+### IsWhitelisted
+Check if player is whitelisted, kept like this for backwards compatibility or future plans
+
+```lua
+---@param source Source
+---@return boolean
+```
+
+
+### AddPermission
+
+```lua
+---@param source Source
+---@param permission string
+```
+
+
+### RemovePermission
+
+```lua
+---@param source Source
+---@param permission string
+```
+
+
+### HasPermission
+Checking for Permission Level
+
+```lua
+---@param source Source
+---@param permission string
+---@return boolean
+```
+
+
+### GetPermission
+
+```lua
+---@param source Source
+---@return table<string, boolean>
+```
+
+
+### IsOptin
+Get whether player is opted into admin reports or not
+
+```lua
+---@param source Source
+---@return boolean
+```
+
+
+### ToggleOptin
+Opt in or out of admin reports
+
+```lua
+---@param source Source
+```
+
+
+### IsPlayerBanned
+Check if player is banned
+
+```lua
+---@param source Source
+---@return boolean
+---@return string? playerMessage
+```
+
+
+### Notify
+Text box popup for player which dissappears after a set time.
+
+```lua
+---@param source
+---@param text table|string text of the notification
+---@param notifyType? NotificationType informs default styling. Defaults to 'inform'
+---@param duration? integer milliseconds notification will remain on screen. Defaults to 5000
+---@param subTitle? string extra text under the title
+---@param notifyPosition? NotificationPosition
+---@param notifyStyle? table Custom styling. Please refer too https://overextended.dev/ox_lib/Modules/Interface/Client/notify#libnotify
+---@param notifyIcon? string Font Awesome 6 icon name
+---@param notifyIconColor? string Custom color for the icon chosen before
+```
+
+
 ## Module: utils
+called using \<FunctionName>
 
 
 ### SpawnVehicle
