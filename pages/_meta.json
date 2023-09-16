@@ -3,8 +3,8 @@
   "resources": "Resources",
   "converting": "Converting from QB",
   "contributors": "Contributing",
-  "faq": "FAQ",
   "developers": "Developer's Guide",
+  "faq": "FAQ",
   "about": {
     "title": "About",
     "type": "page"
