@@ -1,4 +1,4 @@
-import { Callout } from 'nextra/components';
+import { Callout } from "nextra/components";
 
 # Client
 
@@ -6,21 +6,20 @@ import { Callout } from 'nextra/components';
   These events **MUST NOT** be triggered by any other scripts.
 </Callout>
 
-
 ## Non-Networked Events
 
-
 ### QBCore:Client:OnPlayerLoaded
+
 Player finishes spawning
 
 ```lua
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function() end)
 ```
 
-
 ## Networked Events
 
 ### QBCore:Client:SetDuty
+
 Player's duty changes
 
 ```lua
@@ -28,33 +27,33 @@ Player's duty changes
 RegisterNetEvent('QBCore:Client:SetDuty', function(onDuty) end)
 ```
 
-
 ### QBCore:Client:OnPermissionUpdate
+
 Player's permissions are updated. Only works for permissions set by qbx
 
 ```lua
 RegisterNetEvent('QBCore:Client:OnPermissionUpdate', function() end)
 ```
 
-
 ### qbx-core:client:playerLoggedOut
+
 Player logs out and no longer exists in core memory
 
 ```lua
 RegisterNetEvent('qbx-core:client:playerLoggedOut', function() end)
 ```
 
-
 ### QBCore:Client:OnJobUpdate
+
 Player's job is changed
 
 ```lua
 ---@param job Job
 RegisterNetEvent('QBCore:Client:OnJobUpdate', function(job) end)
 ```
-       
 
 ### QBCore:Client:OnGangUpdate
+
 Player's gang is changed
 
 ```lua
@@ -62,8 +61,8 @@ Player's gang is changed
 RegisterNetEvent('QBCore:Client:OnGangUpdate', function(gang) end)
 ```
 
-
 ### QBCore:Client:OnMoneyChange
+
 Player's cash/bank balance is updated
 
 ```lua

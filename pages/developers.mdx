@@ -4,12 +4,15 @@ This guide is intended for those creating scripts using qbx-core. Following thes
 script to break in future Qbox updates.
 
 ## Do not access database tables owned by core
+
 Doing this will break your script if the database schema changes in the future. If the data you need can't be read or written using a core function,
 create a GitHub issue so we can rectify the problem for everyone.
 
 ## Do not modify core code
+
 Doing this will make it difficult for you to update core and make it difficult to debug issues that may be due to custom changes. We've attempted to design things with flexibility in mind.
 However, if you really think you need to modify core, file a GitHub issue first, and we'll see if we can trigger an event for you, surface a config value, or re-design something for the flexibility you need.
 
 ## Do not use deprecated functions/events
+
 These are likely to be removed in future updates.

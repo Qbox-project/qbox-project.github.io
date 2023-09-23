@@ -1,14 +1,15 @@
-import { Callout } from 'nextra/components';
+import { Callout } from "nextra/components";
 
 # Shared
 
 ## Module: utils
+
 <Callout type="info">
   called using `<FunctionName>`
 </Callout>
 
-
 ### GetCoordsFromEntity
+
 Get the coords including the heading from an entity
 
 ```lua
@@ -16,8 +17,8 @@ Get the coords including the heading from an entity
 ---@return vector4
 ```
 
-
 ### GetPlate
+
 Returns the number plate of the specified vehicle
 
 ```lua
@@ -25,8 +26,8 @@ Returns the number plate of the specified vehicle
 ---@return string?
 ```
 
-
 ### DebugPrint
+
 When sending a table, prints the contents of it, otherwise it prints the string directly
 
 ```lua
@@ -35,6 +36,7 @@ When sending a table, prints the contents of it, otherwise it prints the string 
 ```
 
 ### CommaValue
+
 Converts a number to a string version with commas
 
 ```lua
@@ -42,8 +44,8 @@ Converts a number to a string version with commas
 ---@return string
 ```
 
-
 ### string.split
+
 Split a string by a character
 
 ```lua
@@ -52,8 +54,8 @@ Split a string by a character
 ---@return string[]
 ```
 
-
 ### string.trim
+
 Trim unwanted characters off the string
 
 ```lua
@@ -62,8 +64,8 @@ Trim unwanted characters off the string
 ---@return number? count
 ```
 
-
 ### string.firstToUpper
+
 Returns a string with the first character uppercase'd
 
 ```lua
@@ -72,8 +74,8 @@ Returns a string with the first character uppercase'd
 ---@return number? count
 ```
 
-
 ### math.round
+
 Returns a rounded number
 
 ```lua
@@ -82,8 +84,8 @@ Returns a rounded number
 ---@return integer
 ```
 
-
 ### RandomLetter
+
 Returns a random letter
 
 ```lua
@@ -91,8 +93,8 @@ Returns a random letter
 ---@return string
 ```
 
-
 ### RandomNumber
+
 Returns a random number
 
 ```lua
@@ -100,8 +102,8 @@ Returns a random number
 ---@return string
 ```
 
-
 ### RandomNumberOrLetter
+
 Returns a random number or letter
 
 ```lua
@@ -109,9 +111,10 @@ Returns a random number or letter
 ---@return string
 ```
 
-
 ### GenerateRandomPlate
+
 Generates a random number plate according to a pattern, [pattern format](https://docs.fivem.net/natives/?_0x79780FD2), [plate generation source](https://github.com/citizenfx/fivem/blob/cb97fbc54050e2309930128d6deed515d004a1bd/code/components/extra-natives-five/src/VehicleNumberPlateNatives.cpp#L25-L112)
+
 ```lua
 ---@return string
 ```
