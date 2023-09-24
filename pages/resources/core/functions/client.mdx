@@ -1,14 +1,15 @@
-import { Callout } from 'nextra/components';
+import { Callout } from "nextra/components";
 
 # Client
 
 ## Module: core
+
 <Callout type="info">
   called using `QBCore.Functions.<FunctionName>`
 </Callout>
 
-
 ### GetPlayerData
+
 get playerData via callback or return
 
 ```lua
@@ -16,8 +17,8 @@ get playerData via callback or return
 ---@return PlayerData? playerData
 ```
 
-
 ### Notify
+
 Text box popup for player which dissappears after a set time.
 
 ```lua
@@ -31,14 +32,14 @@ Text box popup for player which dissappears after a set time.
 ---@param notifyIconColor? string Custom color for the icon chosen before
 ```
 
-
 ## Module: utils
+
 <Callout type="info">
   called using `<FunctionName>`
 </Callout>
 
-
 ### DrawText2D
+
 Draws Text onto the screen in 2D
 
 ```lua
@@ -54,8 +55,8 @@ Draws Text onto the screen in 2D
 ---@param a? integer alpha 0-255
 ```
 
-
 ### DrawText3D
+
 Draws Text onto the screen in 3D
 
 ```lua
@@ -69,8 +70,8 @@ Draws Text onto the screen in 3D
 ---@param a? integer alpha 0-255
 ```
 
-
 ### GetEntityAndNetIdFromBagName
+
 Wrapper for getting an entity handle and network id from a state bag name, [source](https://github.com/overextended/ox_core/blob/main/client/utils.lua)
 
 ```lua
@@ -79,8 +80,8 @@ Wrapper for getting an entity handle and network id from a state bag name, [sour
 ---@return integer, integer
 ```
 
-
 ### EntityStateHandler
+
 Wrapper for a state bag handler made for entities, [source](https://github.com/overextended/ox_core/blob/main/client/utils.lua)
 
 ```lua
@@ -89,8 +90,8 @@ Wrapper for a state bag handler made for entities, [source](https://github.com/o
 ---@return number
 ```
 
-
 ### PlayAnim
+
 Play an animation
 
 ```lua
@@ -101,8 +102,8 @@ Play an animation
 ---@param duration integer ms
 ```
 
-
 ### GetEntities
+
 Returns the entities from the specified pool in the current scope
 
 ```lua
@@ -111,8 +112,8 @@ Returns the entities from the specified pool in the current scope
 ---@return integer[]
 ```
 
-
 ### GetVehicles
+
 Returns all vehicles in the current scope
 
 ```lua
@@ -120,8 +121,8 @@ Returns all vehicles in the current scope
 ---@return integer[]
 ```
 
-
 ### GetObjects
+
 Returns all objects in the current scope
 
 ```lua
@@ -129,8 +130,8 @@ Returns all objects in the current scope
 ---@return integer[]
 ```
 
-
 ### GetPeds
+
 Returns all peds in the current scope
 
 ```lua
@@ -138,8 +139,8 @@ Returns all peds in the current scope
 ---@return integer[]
 ```
 
-
 ### GetPickups
+
 Returns all pickups in the current scope
 
 ```lua
@@ -147,8 +148,8 @@ Returns all pickups in the current scope
 ---@return integer[]
 ```
 
-
 ### GetPlayersInScope
+
 Returns all players in the current scope
 
 ```lua
@@ -156,8 +157,8 @@ Returns all players in the current scope
 ---@return integer[]
 ```
 
-
 ### GetClosestEntity
+
 Returns the closest entity from the list and the specified coords (if set)
 
 ```lua
@@ -167,8 +168,8 @@ Returns the closest entity from the list and the specified coords (if set)
 ---@return number closestDistance or -1
 ```
 
-
 ### GetClosestPed
+
 Returns the closest ped.
 Use QBCore.Functions.GetClosestPlayer if wanting to ignore non-player peds.
 
@@ -179,8 +180,8 @@ Use QBCore.Functions.GetClosestPlayer if wanting to ignore non-player peds.
 ---@return number closestDistance or -1
 ```
 
-
 ### GetClosestVehicle
+
 Returns the closest vehicle
 
 ```lua
@@ -190,8 +191,8 @@ Returns the closest vehicle
 ---@return number? closestDistance
 ```
 
-
 ### GetClosestObject
+
 Returns the closest object
 
 ```lua
@@ -199,8 +200,8 @@ Returns the closest object
 ---@return integer|nil
 ```
 
-
 ### DeleteVehicle
+
 Deletes the specified vehicle
 
 ```lua
@@ -208,8 +209,8 @@ Deletes the specified vehicle
 ---@return boolean
 ```
 
-
 ### GetClosestPlayer
+
 Returns the closest player
 
 ```lua
@@ -219,8 +220,8 @@ Returns the closest player
 ---@return number? closestDistance
 ```
 
-
 ### GetPlayersFromCoords
+
 Returns the players close to the coords
 
 ```lua
@@ -229,8 +230,8 @@ Returns the players close to the coords
 ---@return number[] playerIds
 ```
 
-
 ### GetClosestBone
+
 Returns the closest bone to the local ped of the specified entity
 
 ```lua
@@ -241,8 +242,8 @@ Returns the closest bone to the local ped of the specified entity
 ---@return number boneDistance
 ```
 
-
 ### GetBoneDistance
+
 Returns the distance from the player to the bone
 
 ```lua
@@ -252,8 +253,8 @@ Returns the distance from the player to the bone
 ---@return number distance
 ```
 
-
 ### AttachProp
+
 ```lua
 ---@param ped integer
 ---@param model string | integer
@@ -268,8 +269,8 @@ Returns the distance from the player to the bone
 ---@return integer prop
 ```
 
-
 ### GetVehicleDisplayName
+
 Returns the model name of the vehicle
 
 ```lua
@@ -277,8 +278,8 @@ Returns the model name of the vehicle
 ---@return string
 ```
 
-
 ### GetVehicleMakeName
+
 Returns the brand name of the vehicle
 
 ```lua
@@ -286,8 +287,8 @@ Returns the brand name of the vehicle
 ---@return string
 ```
 
-
 ### IsVehicleSpawnClear
+
 Check if there is no vehicle obstructing the coords
 
 ```lua
@@ -296,8 +297,8 @@ Check if there is no vehicle obstructing the coords
 ---@return boolean
 ```
 
-
 ### StartParticleAtCoord
+
 Spawns a particle at the coords
 
 ```lua
@@ -313,8 +314,8 @@ Spawns a particle at the coords
 ---@return integer
 ```
 
-
 ### StartParticleOnEntity
+
 Spawns a particle on the specified entity
 
 ```lua
@@ -333,8 +334,8 @@ Spawns a particle on the specified entity
 ---@return number
 ```
 
-
 ### GetStreetNameAtCoords
+
 Returns the street name and cross section from the coords
 
 ```lua
@@ -342,8 +343,8 @@ Returns the street name and cross section from the coords
 ---@return {main: string, cross: string}
 ```
 
-
 ### GetZoneAtCoords
+
 Returns the name of the zone at the specified coords
 
 ```lua
@@ -351,8 +352,8 @@ Returns the name of the zone at the specified coords
 ---@return string
 ```
 
-
 ### GetCardinalDirection
+
 Returns the direction the specified entity or local ped is standing towards
 
 ```lua
@@ -360,8 +361,8 @@ Returns the direction the specified entity or local ped is standing towards
 ---@return 'North' | 'South' | 'East' | 'West' | string direction or error message
 ```
 
-
 ### GetCurrentTime
+
 Returns the current time in-game
 
 ```lua
@@ -375,8 +376,8 @@ Returns the current time in-game
 ---@return CurrentTime
 ```
 
-
 ### GetGroundZCoord
+
 Returns the z coord at the first ground the game can find
 
 ```lua
@@ -384,16 +385,16 @@ Returns the z coord at the first ground the game can find
 ---@return vector3?
 ```
 
-
 ### ClearAllVehicleExtras
+
 Clear all vehicle extras
 
 ```lua
 ---@param vehicle integer
 ```
 
-
 ### ChangeVehicleExtra
+
 Set the status of an extra on the vehicle
 
 ```lua
@@ -402,8 +403,8 @@ Set the status of an extra on the vehicle
 ---@param enable boolean
 ```
 
-
 ### SetVehicleExtras
+
 Set the vehicle extras of a vehicle according to a table
 
 ```lua
@@ -411,8 +412,8 @@ Set the vehicle extras of a vehicle according to a table
 ---@param extras table<integer, boolean>
 ```
 
-
 ### IsWearingGloves
+
 Returns if the local ped is wearing gloves
 
 ```lua
