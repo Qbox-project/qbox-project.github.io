@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 function useHead() {
   const { asPath } = useRouter();
   const { frontMatter, title } = useConfig();
-  const url = `https://qbox-docs.vercel.app${asPath}`;
+  const url = `https://qbox-project.github.io${asPath}`;
   const description = frontMatter.description || "Documentation for the Qbox Project";
 
   return (
@@ -56,7 +56,7 @@ const config: DocsThemeConfig = {
   chat: {
     link: "https://discord.gg/qbox",
   },
-  docsRepositoryBase: "https://github.com/Qbox-project/qbox-docs",
+  docsRepositoryBase: "https://github.com/Qbox-project/qbox-project.github.io",
   footer: {
     text: "Qbox Project",
   },
