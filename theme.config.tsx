@@ -60,7 +60,7 @@ const config: DocsThemeConfig = {
   footer: {
     text: "Qbox Project",
   },
-  primaryHue: { dark: 60, light: 60 },
+  primaryHue: { dark: 200, light: 200 },
   head: useHead,
   useNextSeoProps: useNextSeoProps,
 };
