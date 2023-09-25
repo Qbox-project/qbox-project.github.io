@@ -5,3 +5,8 @@
 3. For security, by default Qbox sets entity lock down mode to relaxed, which prevents clients from spawning networked entities. If you need to change this setting to support scripts that do this, set convar qbx:bucketlockdownmode to 'inactive'
 4. Qbox has multicharacter built-in to core. If you want to keep using your own multicharacter resource, disable core's via core config. Otherwise delete your multicharacter resource.
 5. Qbox maintains a qb compatibility layer, so you can continue to use exports['qb-core']. However, this means you won't get access to all the Qbox features and functions. So consider switching off of exports['qb-core'] when you can.
+
+# Switching a resource from Qb to Qbox
+1. Import the needed modules from qbx-core to supply replacement functions for ones from QBCore
+2. Replace calls to QBCore one by one with calls to the imported modules. Both can be used at the same time, so conversion can be done partially, or over time.
+3. After all QBCore is no longer being called, remove it
