@@ -22,3 +22,6 @@ Qbox is still effectively in an open beta. Users interested in contributing or h
 
 ## Entities keep dissapearing when I try to spawn them
 By default, Qbox prevents clients from creating networked entities as a security measure. To change this setting set qbx:bucketlockdownmode 'inactive'
+
+## Core seems to be missing things
+The core supplied by the core module does not contain deprecated functions/exports/events. If needing these, use exports['qb-core']:GetCoreObject(). This can be used at the same time as the core module, so prefer to use the core module when not calling a deprecated function.
