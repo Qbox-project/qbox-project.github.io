@@ -4,3 +4,4 @@
 2. Configure ox_inventory and convert your database. Back it up first! https://overextended.dev/ox_inventory/Frameworks/qb
 3. For security, by default Qbox sets entity lock down mode to relaxed, which prevents clients from spawning networked entities. If you need to change this setting to support scripts that do this, set convar qbx:bucketlockdownmode to 'inactive'
 4. Qbox has multicharacter built-in to core. If you want to keep using your own multicharacter resource, disable core's via core config. Otherwise delete your multicharacter resource.
+5. Qbox maintains a qb compatibility layer, so you can continue to use exports['qb-core']. However, this means you won't get access to all the Qbox features and functions. So consider switching off of exports['qb-core'] when you can.
