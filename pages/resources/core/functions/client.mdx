@@ -5,17 +5,9 @@ import { Callout } from "nextra/components";
 ## Module: core
 
 <Callout type="info">
-  called using `QBCore.Functions.<FunctionName>`
+  called using `QBX.Functions.<FunctionName>`
 </Callout>
 
-### GetPlayerData
-
-get playerData via callback or return
-
-```lua
----@param cb? fun(playerData: PlayerData)
----@return PlayerData? playerData
-```
 
 ### Notify
 
@@ -171,7 +163,7 @@ Returns the closest entity from the list and the specified coords (if set)
 ### GetClosestPed
 
 Returns the closest ped.
-Use QBCore.Functions.GetClosestPlayer if wanting to ignore non-player peds.
+Use QBX.Functions.GetClosestPlayer if wanting to ignore non-player peds.
 
 ```lua
 ---@param coords? vector3 uses player position if not set

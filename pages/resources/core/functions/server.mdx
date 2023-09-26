@@ -5,34 +5,20 @@ import { Callout } from "nextra/components";
 ## Exports
 
 <Callout type="info">
-  called using `exports['qbx-core']:<FunctionName>`
+  called using `exports['qbx_core']:<FunctionName>`
 </Callout>
 
-### AddJob
+### CreateJobs
 
-Single add job function which should only be used if you planning on adding a single job
-
-```lua
----@param jobName string
----@param job Job
----@return boolean success
----@return string message
-```
-
-### AddJobs
-
-Add multiple jobs
+Add or overwrite jobs. This is a runtime only change and will not modify files.
 
 ```lua
 ---@param jobs table<string, Job>
----@return boolean success
----@return string message
----@return Job? errorJob job causing the error message. Only present if success is false.
 ```
 
 ### RemoveJob
 
-Single Remove Job
+Remove a job from memory. This is a runtime only change and will not modify files.
 
 ```lua
 ---@param jobName string
@@ -40,56 +26,20 @@ Single Remove Job
 ---@return string message
 ```
 
-### UpdateJob
+### CreateGangs
 
--- Single Update Job
-
-```lua
----@param jobName string
----@param job Job
----@return boolean success
----@return string message
-```
-
-### AddGang
-
-Single Add Gang
-
-```lua
----@param gangName string
----@param gang Gang
----@return boolean success
----@return string message
-```
-
-### AddGangs
-
-Multiple Add Gangs
+Add or overwrite gangs. This is a runtime only change and will not modify files.
 
 ```lua
 ---@param gangs table<string, Gang>
----@return boolean success
----@return string message
----@return Gang? errorGang present if success is false. Gang that caused the error message.
 ```
 
 ### RemoveGang
 
-Single Remove Gang
+Remove a gang from memory. This is a runtime only change and will not modify files.
 
 ```lua
 ---@param gangName string
----@return boolean success
----@return string message
-```
-
-### UpdateGang
-
-Single Update Gang
-
-```lua
----@param gangName string
----@param gang Gang
 ---@return boolean success
 ---@return string message
 ```
@@ -111,7 +61,7 @@ Single Update Gang
 ## Module: core
 
 <Callout type="info">
-  called using `QBCore.Functions.<FunctionName>`
+  called using `QBX.Functions.<FunctionName>`
 </Callout>
 
 ### GetSource
