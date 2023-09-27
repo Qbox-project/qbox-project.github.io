@@ -12,9 +12,12 @@ Within Qbox the core object no longer exists. Instead the data can be accessed v
 1. Import the needed modules from qbx_core to supply replacement functions for ones from QBCore
 2. Replace calls to QBCore one by one with calls to the imported modules and exported functions. Both can be used at the same time, so conversion can be done partially, or over time.
 
-Common replacements:
-QBCore.Functions -> exports.qbx_core:
+### Common replacements
+```lua
+QBCore.Functions. -> exports.qbx_core:
 QBCore.Shared.Jobs -> exports.qbx_core:GetJobs()
 QBCore.Shared.Gangs -> exports.qbx_core:GetGangs()
 QBCore.Shared.Vehicles -> exports.qbx_core:GetVehiclesByName()
+QBCOre.Shared.Weapons -> exports.qbx_core:GetWeapons()
 QBCore.Shared.Items -> exports.ox_inventory:Items()
+```
