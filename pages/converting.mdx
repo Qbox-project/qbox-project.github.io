@@ -7,5 +7,7 @@
 5. Qbox maintains a qb compatibility layer, so you can continue to use exports['qb-core']. However, this means you won't get access to all the Qbox features and functions. So consider switching off of exports['qb-core'] when you can.
 
 # Switching a resource from Qb to Qbox
+Within Qbox the core object no longer exists. Instead the data can be accessed via a combination of export functions and imported modules
+
 1. Import the needed modules from qbx_core to supply replacement functions for ones from QBCore
 2. Replace calls to QBCore one by one with calls to the imported modules and exported functions. Both can be used at the same time, so conversion can be done partially, or over time.
