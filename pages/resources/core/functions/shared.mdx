@@ -2,6 +2,40 @@ import { Callout } from "nextra/components";
 
 # Shared
 
+## Exports
+
+<Callout type="info">
+  called using `exports.qbx_core:<FunctionName>`
+</Callout>
+
+### GetJobs
+Returns the jobs table
+
+```lua
+---@return table<string, Job>
+```
+
+### GetGangs
+Returns the gangs table
+
+```lua
+---@return table<string, Gang>
+```
+
+### GetVehiclesByName
+Returns a table mapping vehicle name to vehicle
+
+```lua
+---@return table<string, Vehicle>
+```
+
+### GetVehiclesByHash
+Returns a table mapping vehicle hash to vehicle
+
+```lua
+---@return table<number, Vehicle>
+```
+
 ## Module: utils
 
 <Callout type="info">
