@@ -52,30 +52,6 @@ That means you can use it like any other script you have in your own resource.
 
 # Modules
 
-## core
-Adds global QBX with slightly different fields depending on if importing on the client or the server
-
-###### client
-```lua
-QBX.Config -- access global config created in config.lua
-QBX.Shared -- access tables of jobs, gangs, locations, etc. https://github.com/Qbox-project/qbx_core/blob/main/shared/main.lua
-QBX.Functions -- invoke core functions Ex: 'QBX.Functions.<function name>()'
-QBX.IsLoggedIn -- whether the player has finished selecting a character
-```
-
-###### server
-```lua
-QBX.Config -- access global config created in config.lua
-QBX.Shared -- access tables of jobs, gangs, locations, etc. https://github.com/Qbox-project/qbx_core/blob/main/shared/main.lua
-QBX.Functions -- invoke core functions Ex: 'QBX.Functions.<function name>()'
-
----@type table<Source, Player>
-QBX.Players = {}
-
----@type table<itemName, table>
-QBX.UsableItems = {}
-```
-
 ## playerdata
 Adds global QBX.PlayerData and keeps it updated
 https://github.com/Qbox-project/qbx_core/blob/14edd8e082b6579ef30a5e34df29f5a26bc29a21/server/player.lua#L3

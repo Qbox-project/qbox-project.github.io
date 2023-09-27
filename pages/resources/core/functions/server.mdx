@@ -5,7 +5,7 @@ import { Callout } from "nextra/components";
 ## Exports
 
 <Callout type="info">
-  called using `exports['qbx_core']:<FunctionName>`
+  called using `exports.qbx_core:<FunctionName>`
 </Callout>
 
 ### CreateJobs
@@ -58,12 +58,6 @@ Remove a gang from memory. This is a runtime only change and will not modify fil
 ---@param origin string reason
 ```
 
-## Module: core
-
-<Callout type="info">
-  called using `QBX.Functions.<FunctionName>`
-</Callout>
-
 ### GetSource
 
 ```lua
@@ -79,13 +73,6 @@ Remove a gang from memory. This is a runtime only change and will not modify fil
 ```
 
 ### GetPlayerByCitizenId
-
-```lua
----@param citizenid string
----@return Player?
-```
-
-### GetOfflinePlayerByCitizenId
 
 ```lua
 ---@param citizenid string
@@ -269,6 +256,68 @@ Text box popup for player which dissappears after a set time.
 ---@param notifyStyle? table Custom styling. Please refer too https://overextended.dev/ox_lib/Modules/Interface/Client/notify#libnotify
 ---@param notifyIcon? string Font Awesome 6 icon name
 ---@param notifyIconColor? string Custom color for the icon chosen before
+```
+
+### Login
+Login an existing character or create a new one. This is the preferred function for creating characters if the owning player is online.
+
+```lua
+---@param source Source
+---@param citizenid? string populated for existing characters only
+---@param newData? PlayerEntity populated for new characters only
+---@return boolean success
+```
+
+### GetOfflinePlayer
+
+```lua
+---@param citizenid string
+---@return Player? if found in storage
+```
+
+### Logout
+Logs player out of their current character
+
+```lua
+---@param source Source
+```
+
+### CreatePlayer
+Creates a new character and saves in database.
+
+```lua
+---@param playerData PlayerData
+---@param offline boolean
+---@return Player player
+```
+
+### Save
+Save player info to database
+
+```lua
+---@param source Source
+```
+
+### SaveOffline
+Saves PlayerData to database
+
+```lua
+---@param playerData PlayerEntity
+```
+
+### DeleteCharacter
+Delete a character permanently. This action cannot be undone.
+
+```lua
+---@param citizenid string
+```
+
+### GenerateUniqueIdentifier
+Generate unique values for player identifiers
+
+```lua
+---@param type UniqueIdType The type of unique value to generate
+---@return string | number UniqueVal unique value generated
 ```
 
 ## Module: utils

@@ -1,5 +1,6 @@
 {
   "functions": "Functions",
   "events": "Events",
-  "import": "Import"
+  "import": "Import",
+  "player": "Player"
 }

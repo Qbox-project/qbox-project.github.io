@@ -1,0 +1,102 @@
+import { Callout } from "nextra/components";
+
+# Player
+```lua
+---@field Functions table
+---@field PlayerData table
+---@field Offline boolean
+```
+
+## Functions
+
+<Callout type="info">
+  called using `player.Functions.<FunctionName>`
+</Callout>
+
+### SetJob
+```lua
+---@param job string name
+---@param grade integer
+---@return boolean success if job was set
+```
+
+### SetGang
+```lua
+---@param gang string name
+---@param grade integer
+---@return boolean success if gang was set
+```
+
+### SetJobDuty
+```lua
+---@param onDuty boolean
+```
+
+### SetPlayerData
+Overwrites a top level key of playerdata with the specified value.
+
+```lua
+---@param key string
+---@param val any
+```
+
+### SetMetaData
+Stores a key value pair 
+
+```lua
+---@param meta string
+---@param val any
+```
+
+### GetMetaData
+Retrieves value in metadata given a key
+
+```lua
+---@param meta string
+---@return any
+```
+
+### AddJobReputation
+```lua
+---@param amount number
+```
+
+### AddMoney
+```lua
+---@param moneytype MoneyType
+---@param amount number
+---@param reason? string
+---@return boolean success if money was added
+```
+
+### RemoveMoney
+```lua
+---@param moneytype MoneyType
+---@param amount number
+---@param reason? string
+---@return boolean success if money was removed
+```
+
+### SetMoney
+```lua
+---@param moneytype MoneyType
+---@param amount number
+---@param reason? string
+---@return boolean success if money was set
+```
+
+### GetMoney
+```lua
+---@param moneytype MoneyType
+---@return boolean | number amount or false if moneytype does not exist
+```
+
+### SetCreditCard
+Sets owned credit card number. Does not give character any items.
+
+```lua
+---@param cardNumber number
+```
+
+### Save
+Saves character to database
