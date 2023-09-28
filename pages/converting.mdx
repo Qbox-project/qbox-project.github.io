@@ -15,9 +15,16 @@ Within Qbox the core object no longer exists. Instead the data can be accessed v
 ### Common replacements
 ```lua
 QBCore.Functions. -> exports.qbx_core:
+QBCore.Functions.GetPlayerData() -> QBX.PlayerData (requires playerdata module import)
 QBCore.Shared.Jobs -> exports.qbx_core:GetJobs()
 QBCore.Shared.Gangs -> exports.qbx_core:GetGangs()
 QBCore.Shared.Vehicles -> exports.qbx_core:GetVehiclesByName()
 QBCOre.Shared.Weapons -> exports.qbx_core:GetWeapons()
 QBCore.Shared.Items -> exports.ox_inventory:Items()
+
+exports['qb-core']:KeyPressed() -> lib.hideTextUI()
+exports['qb-core']:HideText() -> lib.hideTextUI()
+exports['qb-core']:DrawText(text, position) -> lib.showTextUI(text, {position = position})
+exports['qb-core']:ChangeText(text, position) -> lib.hideTextUI() lib.showTextUI(text, {position = position})
+
 ```
