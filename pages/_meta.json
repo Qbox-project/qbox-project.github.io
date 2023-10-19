@@ -6,9 +6,5 @@
   "contributors": "Contributing",
   "developers": "Developer's Guide",
   "release": "Release Readiness",
-  "faq": "FAQ",
-  "about": {
-    "title": "About",
-    "type": "page"
-  }
+  "faq": "FAQ"
 }
