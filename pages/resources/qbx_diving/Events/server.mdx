@@ -1,0 +1,23 @@
+import { Callout } from "nextra/components";
+
+# Server
+
+<Callout type="warning">
+  These events **MUST NOT** be triggered by any other scripts.
+</Callout>
+
+## Non-Networked Events
+
+### qbx_diving:server:coralTaken
+
+Player has collected coral from the sea bed
+
+```lua
+---@param vec3 coords
+```
+
+## Networked Events
+
+### qbx_diving:server:sellCoral
+
+Player attempts to sell coral. Does not guarantee player has any coral in inventory.
