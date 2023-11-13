@@ -1,0 +1,38 @@
+# Hooks
+
+Credit to overextended for the hook system.
+
+Event hooks allow 3rd party resources to define new behaviour without modifying the inventory code directly.
+
+## registerHook
+
+```lua
+exports.qbx_medical:registerHook(eventName, function(payload) end)
+```
+
+- eventName: `string`
+- payload: `table`
+
+Return:
+
+- hookId: `number`
+
+### respawn
+
+Triggered when moving any item from one slot to another, or when "giving" an item.  
+By returning `false`, you can cancel the action and revert the inventory state.
+
+```lua
+---@param payload {source: number}
+```
+
+## removeHooks
+
+Removes a hook created by the invoking resource with the the specified id.  
+If no id is specified then all hooks registered by the resource are removed.
+
+```lua
+exports.qbx_medical:removeHooks(id)
+```
+
+- id?: `number`
