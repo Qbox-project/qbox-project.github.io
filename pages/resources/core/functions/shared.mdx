@@ -36,6 +36,13 @@ Returns a table mapping vehicle hash to vehicle
 ---@return table<number, Vehicle>
 ```
 
+### GetVehiclesByCategory
+Returns a table mapping vehicle category to vehicles
+
+```lua
+---@return table<string, Vehicle[]>
+```
+
 ### GetWeapons
 Returns the weapons table
 
@@ -156,4 +163,14 @@ Generates a random number plate according to a pattern, [pattern format](https:/
 
 ```lua
 ---@return string
+```
+
+### MapTableBySubfield
+
+Creates a new key value table with the key being the subfield and the value being matching entries of the input table
+
+```lua
+---@param subfield string
+---@param table table
+---@return table<any, table[]>
 ```

@@ -2,9 +2,8 @@
 
 1. Check your job grades in `qbx_core/shared/jobs.lua`. In Qbox, job grades are numbers without quotations, whereas in Qb they are strings.
 2. Configure ox_inventory and convert your database. Back it up first! https://overextended.dev/ox_inventory/Frameworks/qb
-3. For security, by default Qbox sets entity lock down mode to relaxed, which prevents clients from spawning networked entities. If you need to change this setting to support scripts that do this, set convar qbx:bucketlockdownmode to 'inactive'
-4. Qbox has multicharacter built-in to core. If you want to keep using your own multicharacter resource, disable core's via core config. Otherwise delete your multicharacter resource.
-5. Qbox maintains a qb compatibility layer, so you can continue to use exports['qb-core']. However, this means you won't get access to all the Qbox features and functions. So consider switching off of exports['qb-core'] when you can.
+3. Qbox has multicharacter built-in to core. If you want to keep using your own multicharacter resource, disable core's via core config. Otherwise delete your multicharacter resource.
+4. Qbox maintains a qb compatibility layer, so you can continue to use exports['qb-core'] and it should have full compatibibility. However, this means you won't get access to all the Qbox features and functions. So consider switching off of exports['qb-core'] when you can. This bridge layer means that qb-core resources should be 100% compatible with Qbox.
 
 ## Switching a resource from Qb to Qbox
 Within Qbox the core object no longer exists. Instead the data can be accessed via a combination of export functions and imported modules
@@ -21,11 +20,11 @@ QBCore.Shared.Jobs -> exports.qbx_core:GetJobs()
 QBCore.Shared.Gangs -> exports.qbx_core:GetGangs()
 QBCore.Shared.Vehicles -> exports.qbx_core:GetVehiclesByName()
 QBCore.Shared.Weapons -> exports.qbx_core:GetWeapons()
+QBCore.Shared.Locations -> exports.qbx_core:GetLocations()
 QBCore.Shared.Items -> exports.ox_inventory:Items()
 
 exports['qb-core']:KeyPressed() -> lib.hideTextUI()
 exports['qb-core']:HideText() -> lib.hideTextUI()
 exports['qb-core']:DrawText(text, position) -> lib.showTextUI(text, {position = position})
 exports['qb-core']:ChangeText(text, position) -> lib.hideTextUI() lib.showTextUI(text, {position = position})
-
 ```
