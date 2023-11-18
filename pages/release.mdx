@@ -10,8 +10,16 @@ A resource is release ready when all of the following are true
 5. Code is readable and well organized
 6. No deprecated functions are being invoked
 
+## Database Practices
+1. Does not read from tables it does not own. Uses exports from the owning resources to get data instead
+2. Has database calls to tables it does own in a designated storage layer of the resource (see server/storage.lua on core)
+
+## Config Practices
+1. Config is located inside of a config folder, and is split between client.lua, shared.lua, and server.lua. Each of this is a module (i.e. returns a table)
+
 ## Core Practices
 1. Client PlayerData is accessed using playerdata module, instead of a core export
+2. Utils module is used to replace duplicate code like DrawText
 
 ## Resource Quality
 1. Resource features provide a good experience for players/devs/owners/admins
@@ -24,5 +32,11 @@ A resource is release ready when all of the following are true
 2. Resource has been tested or unchanged for long enough to give confidence that major bugs are not present
 
 ## Dependencies
-1. Dependencies are declared and enforced using [lib.checkDependency](https://overextended.dev/ox_lib/Modules/Version/Shared), NOT fxmanifest dependencies
+1. Dependencies are declared and enforced using [lib.checkDependency](https://overextended.dev/ox_lib/Modules/Version/Shared). fxmanifest dependencies should be used intentionally; understanding the behavior of restarting a resource.
 2. Dependencies are stable
+
+## Release Automation & Documentation
+1. The first line of code executed by the server is [lib.versionCheck](https://overextended.dev/ox_lib/Modules/Version/Server#libversioncheck)
+2. The resource has a .github folder with bug/suggestion templates, automated version updater & release script
+3. The resource has a README which contains marketing material about the resource and it's features. Note that this is not technical documentation.
+4. The resources public API (events & exports) are documented on the [technical-docs](https://qbox-project.github.io/resources)
