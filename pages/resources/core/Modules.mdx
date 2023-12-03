@@ -16,3 +16,28 @@ Adds global utility functions
 
 ### Installation
 Add 'qbx_core/modules/utils.lua' to shared_scripts in fxmanifest.lua
+
+## logger
+
+logs to either discord or ox_lib depending on whether webhook is nil or not
+
+```lua
+---@field source string source of the log. Usually a playerId or name of a resource.
+---@field event string the action or 'event' being logged. Usually a verb describing what the name is doing. Example: SpawnVehicle
+---@field message string the message attached to the log
+---@field webhook? string Discord logs only. url of the webhook this log should send to
+---@field color? string Discord logs only. what color the message should be
+---@field tags? string[] Discord logs only. tags in discord. Example: ['@admin', '@everyone']
+```
+
+### Example use
+
+```lua
+local logger = require '@qbx_core.modules.logger'
+
+logger.log({
+  source = 'my source',
+  event = 'my event',
+  message = 'my message',
+})
+```
