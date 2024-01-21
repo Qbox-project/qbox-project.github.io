@@ -1,0 +1,21 @@
+---
+title: qbx_medical
+---
+
+import { Callout, Cards, Card } from 'nextra/components';
+import { IconBrandGithub, IconTag } from '@tabler/icons-react';
+
+# qbx_medical
+
+<Callout emoji="⚠️">
+  **This resource is unstable and still under development!** \
+  The documentation about this resource might be incomplete and outdated.
+</Callout>
+
+<Cards>
+  <Card icon={<IconBrandGithub />} title="GitHub" href="https://github.com/Qbox-Project/qbx_medical" />
+  <Card icon={<IconTag />} title="Releases" href="https://github.com/Qbox-Project/qbx_medical/releases" />
+</Cards>
+
+Tracks and modifies player health, armor, damage, and negative status effects.
+Items, jobs, and inanimate objects like hospital beds should use qbx_medical exports, hooks, and events to read and modify player health.
