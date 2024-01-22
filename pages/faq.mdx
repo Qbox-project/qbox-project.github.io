@@ -10,7 +10,16 @@ As time goes on, expect greater differences in player facing features.
 
 ## Will my QBCore scripts work with Qbox?
 
-Yes. We've created a bridge layer for backwards compatibility with QBCore scripts. You can continue to use them without any modifications.
+TL;DR: Yes (in most cases).
+
+We've created a bridge layer for backwards compatibility with the documented and proper ways of using qb-core,
+and you can continue to use most QBCore scripts without any modifications.
+
+An exception to this is resources that use qb-core in undocumented, unsupported, invalid, and/or improper ways, such as:
+- Direct access to database tables;
+- Direct access to qb-core files that aren't meant to be used by other resources;
+- Invalid usages of existing functions;
+- And other unexpected ways not mentioned here.
 
 ## Who should use Qbox?
 

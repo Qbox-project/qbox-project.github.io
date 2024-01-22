@@ -1,10 +1,19 @@
 # Converting from QBCore
 
-1. Check your job grades in `qbx_core/shared/jobs.lua`. In Qbox, job grades are numbers without quotations, whereas in QBCore they are strings.
-2. Configure ox_inventory and convert your database. Back it up first! ([see ox_inventory documentation](https://overextended.dev/ox_inventory/Frameworks/qb))
-3. Qbox has multicharacter built into qbx_core. If you want to keep using your own multicharacter resource, configure qbx_core accordingly. Otherwise you can disable or delete your old multicharacter resource.
-4. Qbox has a queue system built into qbx_core. If you want to keep using your own queue system, specify `set qbx:enablequeue "true"` inside your cfg file. Otherwise you can disable or delete your old queue system.
-5. Qbox maintains a qb-core compatibility layer so all existing qb-core resources should expect 100% compatibility. You can continue using `exports['qb-core']`, however, this means you won't get access to all the new Qbox features and functions, so consider switching off of `exports['qb-core']` when you can.
+1. Check your job grades in `qbx_core/shared/jobs.lua`.
+  In Qbox, job grades are numbers without quotations, whereas in QBCore they are strings.
+2. Configure ox_inventory and convert your database.
+  Back it up first! ([see ox_inventory documentation](https://overextended.dev/ox_inventory/Frameworks/qb))
+3. Qbox has multicharacter built into qbx_core.
+  If you want to keep using your own multicharacter resource, configure qbx_core accordingly.
+  Otherwise you can disable or delete your old multicharacter resource.
+4. Qbox has a queue system built into qbx_core.
+  If you want to keep using your own queue system, specify `set qbx:enablequeue "true"` inside your cfg file.
+  Otherwise you can disable or delete your old queue system.
+5. Qbox maintains a qb-core compatibility layer so all existing qb-core resources should expect compatibility most times.
+  You can continue using `exports['qb-core']`, however, this means you won't get access to all the new Qbox features and functions, so consider switching off of `exports['qb-core']` when you can.
+  Do note that undocumented and invalid usages of qb-core are not supported and may not be in the future.
+  See the [FAQ](./faq#will-my-qbcore-scripts-work-with-qbox) for more details.
 
 ## Migrating a resource from QBCore to Qbox
 
