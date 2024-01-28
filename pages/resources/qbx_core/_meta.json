@@ -2,5 +2,5 @@
   "exports": "Exports",
   "events": "Events",
   "modules": "Modules",
-  "classes": "Classes"
+  "types": "Types"
 }
