@@ -1,6 +1,6 @@
 import { Callout } from "nextra/components";
 
-# Server
+# Server Events
 
 <Callout type="warning">
   These events **MUST NOT** be triggered by any other scripts.
@@ -10,14 +10,21 @@ import { Callout } from "nextra/components";
 
 ### qbx_diving:server:coralTaken
 
-Player has collected coral from the sea bed
+Triggered when a player has collected coral from the sea bed.
 
 ```lua
----@param vec3 coords
+AddEventHandler('qbx_diving:server:coralTaken', function(coords) end)
 ```
+
+- coords: `vector3`
 
 ## Networked Events
 
 ### qbx_diving:server:sellCoral
 
-Player attempts to sell coral. Does not guarantee player has any coral in inventory.
+Triggered when a player attempts to sell coral. \
+Does not guarantee that the player has any coral in their inventory.
+
+```lua
+RegisterNetEvent('qbx_diving:server:sellCoral', function() end)
+```

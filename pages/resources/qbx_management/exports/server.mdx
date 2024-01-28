@@ -1,0 +1,25 @@
+import { Callout } from 'nextra/components';
+
+# Server Exports
+
+## RegisterBossMenu
+
+Creates a boss menu.
+
+<Callout type='warning'>
+  This is a runtime-only change.
+  This won't persist across restarts and won't modify files.
+</Callout>
+
+```lua
+exports.qbx_management:RegisterBossMenu(menuInfo)
+```
+
+- menuInfo: `table`
+  - groupName: `string`
+  - type: `'gang' | 'job'`
+  - coords: `vector3`
+  - size?: `vector3`
+    - Default: `vec3(1.5, 1.5, 1.5)`
+  - rotation?: `number`
+    - Default: `0.0`
