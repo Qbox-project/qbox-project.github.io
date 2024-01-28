@@ -1,3 +1,12 @@
 a {
   text-decoration: none !important;
 }
+
+ul.nx-list-disc li ul {
+  margin-top: 0 !important;
+  list-style-type: circle;
+}
+
+ul.nx-list-disc li li ul {
+  list-style-type: square;
+}

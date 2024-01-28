@@ -1,0 +1,215 @@
+# Client Lib
+
+## drawText2d
+
+Draws text onto the screen in 2D space for a single frame.
+
+```lua
+qbx.drawText2d(params)
+```
+
+- params: `table`
+  - text: `string`
+  - coords: `vector2`
+    - On-screen coordinates.
+  - scale?: `integer`
+    - Default: `0.35`
+  - font?: `integer`
+    - Default: `4`
+  - color?: `vector4`
+    - An RGBA value; white by default.
+  - width?: `number`
+    - Default: `1.0`
+  - height?: `number`
+    - Default: `1.0`
+
+## drawText3d
+
+Draws text onto the screen in 3D space for a single frame.
+
+```lua
+qbx.drawText3d(params)
+```
+
+- params: `table`
+  - text: `string`
+  - coords: `vector3`
+    - In-world coordinates.
+  - scale?: `integer`
+    - Default: `0.35`
+  - font?: `integer`
+    - Default: `4`
+  - color?: `vector4`
+    - An RGBA value; white by default.
+
+## getEntityAndNetIdFromBagName
+
+Gets and returns an entity handle and network id from a state bag name. \
+Will return `0` for both if an invalid entity was received.
+
+```lua
+qbx.getEntityAndNetIdFromBagName(bagName)
+```
+
+- bagName: `string`
+
+Returns:
+
+- entity: `integer`
+- netId: `integer`
+
+## entityStateHandler
+
+Returns a state bag handler made for entities.
+
+```lua
+qbx.entityStateHandler(keyFilter, cb)
+```
+
+- keyFilter: `string`
+- cb: `fun(entity: number, netId: number, value: any, bagName: string)`
+
+Returns: `number`
+
+## deleteVehicle
+
+Deletes the specified vehicle and returns whether it was successful.
+
+```lua
+qbx.deleteVehicle(vehicle)
+```
+
+- vehicle: `integer`
+
+Returns: `boolean`
+
+## getVehicleDisplayName
+
+Returns the model name of the given vehicle.
+
+```lua
+qbx.getVehicleDisplayName(vehicle)
+```
+
+- vehicle: `integer`
+
+Returns: `string`
+
+## getVehicleMakeName
+
+Returns the brand name of the given vehicle.
+
+```lua
+qbx.getVehicleMakeName(vehicle)
+```
+
+- vehicle: `integer`
+
+Returns: `string`
+
+## getStreetName
+
+Returns the street name and cross section name at the given coords.
+
+```lua
+qbx.getStreetName(coords)
+```
+
+- coords: `vector3`
+
+Returns:
+
+- streetName: `table`
+  - main: `string`
+  - cross: `string`
+
+## getZoneName
+
+Returns the name of the zone at the given coords.
+
+```lua
+qbx.getZoneName(coords)
+```
+
+- coords: `vector3`
+
+Returns: `string`
+
+## setVehicleExtra
+
+Set an extra on the given vehicle.
+
+```lua
+qbx.setVehicleExtra(vehicle, extra, enable)
+```
+
+- vehicle: `integer`
+- extra: `integer`
+- enable: `boolean`
+  - Whether to enable the extra.
+
+## resetVehicleExtras
+
+Enables all the extras of the given vehicle.
+
+```lua
+qbx.resetVehicleExtras(vehicle)
+```
+
+- vehicle: `integer`
+
+## setVehicleExtras
+
+Sets all the extras of the given vehicle.
+
+```lua
+qbx.setVehicleExtra(vehicle, extras)
+```
+
+- vehicle: `integer`
+- extras: `table<integer, boolean>`
+
+## isWearingGloves
+
+Returns if the local ped is wearing gloves.
+
+```lua
+qbx.isWearingGloves()
+```
+
+Returns: `boolean`
+
+## loadAudioBank
+
+Attempts to load an audio bank and returns whether it was successful. \
+Remember to use `ReleaseScriptAudioBank` since you can only load up to 10 banks.
+
+```lua
+qbx.loadAudioBank(audioBank, timeout)
+```
+
+- audioBank: `string`
+- timeout?: `number`
+
+Returns: `boolean`
+
+## playAudio
+
+Plays a sound with the provided audio name and audio ref. \
+If `returnSoundId` is false or not specified the soundId is released, \
+otherwise the function returns the soundId without releasing it.
+
+```lua
+qbx.playAudio(params)
+```
+
+- params: `table`
+  - audioName: `string`
+  - audioRef: `string`
+  - returnSoundId?: `boolean`
+  - audioSource?: `number | vector3`
+    - Entity handle or vector3 coords.
+  - range?: `number`
+    - Only used if `audioSource` is a vector3 coordinate.
+
+Returns: `number?`

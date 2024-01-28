@@ -1,6 +1,6 @@
 {
-  "functions": "Functions",
+  "exports": "Exports",
   "events": "Events",
-  "Modules": "Modules",
-  "player": "Player"
+  "modules": "Modules",
+  "classes": "Classes"
 }

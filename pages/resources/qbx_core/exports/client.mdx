@@ -1,0 +1,38 @@
+import { Callout } from "nextra/components";
+
+# Client Exports
+
+## Notify
+
+<Callout type="info">
+  See [`lib.notify`] for more details.
+</Callout>
+
+Text box popup which disappears after a given amount of time.
+
+```lua
+exports.qbx_core:Notify(text, notifyType, duration, subTitle, notifyPosition, notifyStyle, notifyIcon, notifyIconColor)
+```
+
+- text: `table | string`
+  - The text of the notification.
+  - Can be a string, or a table containing:
+    - text?: `string`
+    - caption?: `string`
+- notifyType?: `'inform' | 'error' | 'success' | 'warning'`
+  - Default: `'inform'`
+- duration?: `integer`
+  - The duration in milliseconds for which the notification will remain on screen.
+  - Default: `5000`
+- subTitle?: `string`
+  - Additional text under the title.
+- notifyPosition?: `'top' | 'top-right' | 'top-left' | 'bottom' | 'bottom-right' | 'bottom-left' | 'center-right' | 'center-left'`
+  - Default: `top-right` (changable in config)
+- notifyStyle?: `table`
+  - Custom styling. Refer to [`lib.notify`].
+- notifyIcon?: `string`
+  - Font Awesome 6 icon name.
+- notifyIconColor?: `string`
+  - Custom color for `notifyIcon`.
+
+[`lib.notify`]: https://overextended.dev/ox_lib/Modules/Interface/Client/notify#libnotify

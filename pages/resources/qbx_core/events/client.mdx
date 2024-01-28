@@ -1,6 +1,6 @@
 import { Callout } from "nextra/components";
 
-# Client
+# Client Events
 
 <Callout type="warning">
   These events **MUST NOT** be triggered by any other scripts.
@@ -10,7 +10,7 @@ import { Callout } from "nextra/components";
 
 ### QBCore:Client:OnPlayerLoaded
 
-Player finishes spawning
+Triggered when the player finishes spawning.
 
 ```lua
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function() end)
@@ -20,16 +20,18 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function() end)
 
 ### QBCore:Client:SetDuty
 
-Player's duty changes
+Triggered when the player's job duty is updated.
 
 ```lua
----@param boolean onDuty
 RegisterNetEvent('QBCore:Client:SetDuty', function(onDuty) end)
 ```
 
+- onDuty: `boolean`
+
 ### QBCore:Client:OnPermissionUpdate
 
-Player's permissions are updated. Only works for permissions set by qbx
+Triggered when the player's permissions are updated. \
+Only works for permissions set via Qbox.
 
 ```lua
 RegisterNetEvent('QBCore:Client:OnPermissionUpdate', function() end)
@@ -37,7 +39,7 @@ RegisterNetEvent('QBCore:Client:OnPermissionUpdate', function() end)
 
 ### qbx_core:client:playerLoggedOut
 
-Player logs out and no longer exists in core memory
+Triggered when the player logs out and no longer exists in qbx_core's memory.
 
 ```lua
 RegisterNetEvent('qbx_core:client:playerLoggedOut', function() end)
@@ -45,30 +47,33 @@ RegisterNetEvent('qbx_core:client:playerLoggedOut', function() end)
 
 ### QBCore:Client:OnJobUpdate
 
-Player's job is changed
+Triggered when the player's job is updated.
 
 ```lua
----@param job Job
 RegisterNetEvent('QBCore:Client:OnJobUpdate', function(job) end)
 ```
 
+- job: `Job`
+
 ### QBCore:Client:OnGangUpdate
 
-Player's gang is changed
+Triggered when the player's gang is updated.
 
 ```lua
----@param gang Gang
 RegisterNetEvent('QBCore:Client:OnGangUpdate', function(gang) end)
 ```
 
+- gang: `Gang`
+
 ### QBCore:Client:OnMoneyChange
 
-Player's cash/bank balance is updated
+Triggered when the player's cash/bank balance is updated.
 
 ```lua
----@param moneyType 'cash' | 'bank' | 'crypto'
----@param amount number
----@param operation 'add' | 'remove' | 'set'
----@param reason string
 RegisterNetEvent('QBCore:Client:OnMoneyChange', function(moneytype, amount, operation, reason) end)
 ```
+
+- moneyType: `'cash' | 'bank' | 'crypto'`
+- amount: `number`
+- operation: `'add' | 'remove' | 'set'`
+- reason: `string`

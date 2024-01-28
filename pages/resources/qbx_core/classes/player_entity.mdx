@@ -1,0 +1,91 @@
+---
+title: PlayerEntity
+---
+
+# PlayerEntity
+
+## Fields
+
+- citizenid: `string`
+- license: `string`
+- name: `string`
+- money: `table`
+  - cash: `number`
+  - bank: `number`
+  - crypto: `number`
+- charinfo: `table`
+  - firstname: `string`
+  - lastname: `string`
+  - birthdate: `string`
+  - nationality: `string`
+  - cid: `integer`
+  - gender: `integer`
+  - backstory: `string`
+  - phone: `string`
+  - account: `string`
+  - card: `number`
+- job: `table`
+  - name: `string`
+  - label: `string`
+  - payment: `number`
+  - type: `string`
+  - onduty: `boolean`
+  - isboss: `boolean`
+  - grade: `table`
+    - name: `string`
+    - level: `number`
+- gang: `table`
+  - name: `string`
+  - label: `string`
+  - isboss: `boolean`
+  - grade: `table`
+    - name: `string`
+    - level: `number`
+- position: `vector4`
+- metadata: `table`
+  - health: `number`
+  - armor: `number`
+  - hunger: `number`
+  - thirst: `number`
+  - stress: `number`
+  - isdead: `boolean`
+  - inlaststand: `boolean`
+  - ishandcuffed: `boolean`
+  - tracker: `boolean`
+  - injail: `number`
+  - jailitems: `table`
+  - status: `table`
+  - phone: `table`
+    - background: `any`
+    - profilepicture: `any`
+  - bloodtype: `string`
+  - dealerrep: `number`
+  - craftingrep: `number`
+  - attachmentcraftingrep: `number`
+  - currentapartment?: `integer`
+  - jobrep: `table`
+    - tow: `number`
+    - trucker: `number`
+    - taxi: `number`
+    - hotdog: `number`
+  - callsign: `string`
+  - fingerprint: `string`
+  - walletid: `string`
+  - criminalrecord: `table`
+    - hasRecord: `number`
+    - date?: `table`
+  - licences: `table`
+    - id: `boolean`
+    - driver: `boolean`
+    - weapon: `boolean`
+  - inside: `table`
+    - house?: `any`
+    - apartment: `table`
+      - apartmentType?: `any`
+      - apartmentId?: `integer`
+  - phonedata: `table`
+    - SerialNumber: `string`
+    - InstalledApps: `table`
+- cid: `integer`
+- items: `table`
+  - Deprecated.

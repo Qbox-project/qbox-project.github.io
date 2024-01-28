@@ -1,0 +1,71 @@
+# Shared Exports
+
+## GetJobs
+
+Returns the jobs table.
+
+```lua
+exports.qbx_core:GetJobs()
+```
+
+Returns: `table<string, Job>`
+
+## GetGangs
+
+Returns the gangs table.
+
+```lua
+exports.qbx_core:GetGangs()
+```
+
+Returns: `table<string, Gang>`
+
+## GetVehiclesByName
+
+Returns a table mapping vehicle name to vehicle.
+
+```lua
+exports.qbx_core:GetVehiclesByName()
+```
+
+Returns: `table<string, Vehicle>`
+
+## GetVehiclesByHash
+
+Returns a table mapping vehicle hash to vehicle.
+
+```lua
+exports.qbx_core:GetVehiclesByHash()
+```
+
+Returns: `table<number, Vehicle>`
+
+## GetVehiclesByCategory
+
+Returns a table mapping vehicle category to vehicles.
+
+```lua
+exports.qbx_core:GetVehiclesByCategory()
+```
+
+Returns: `table<string, Vehicle[]>`
+
+## GetWeapons
+
+Returns the weapons table.
+
+```lua
+exports.qbx_core:GetWeapons()
+```
+
+Returns: `table<number, Weapon>`
+
+## GetLocations
+
+Returns the locations table.
+
+```lua
+exports.qbx_core:GetLocations()
+```
+
+Returns: `table<string, vector4>`
