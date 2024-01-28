@@ -1,35 +1,44 @@
 # Frequently Asked Questions
 
-## What are the differences between Qb and Qbox?
+## What are the differences between QBCore and Qbox?
 
-While originally forked from Qb, many Qbox resources have been refactored to improve code quality, enhance security, lower performance overhead, and integrate with [overextended](https://overextended.dev) resources.
-Where appropriate Qbox also integrates directly with other open source projects, rather than maintain subpar resources in-house.
-Qbox maintains high quality standards, with a strong community of regular contributors. As time goes on, expect greater differences in player facing features.
+While originally forked from QBCore, many Qbox resources have been refactored to improve code quality, enhance security, lower performance overhead, and integrate with [overextended](https://overextended.dev) resources.
+Where appropriate Qbox also integrates directly with other open source projects, rather than maintaining subpar resources in-house.
 
-## Will Qb compatible scripts work with Qbox?
+Qbox maintains high quality standards, with a strong community of regular contributors.
+As time goes on, expect greater differences in player facing features.
 
-Yes. We've created a bridge layer for backwards compatibility with Qb scripts. You can continue to use Qb scripts without any modifications.
+## Will my QBCore scripts work with Qbox?
 
-## When will Qbox get a stable release?
+TL;DR: Yes (in most cases).
 
-Expect individual resources to get versioned releases over the coming months as they get stabilized and tested.
+We've created a bridge layer for backwards compatibility with the documented and proper ways of using qb-core,
+and you can continue to use most QBCore scripts without any modifications.
+
+An exception to this is resources that use qb-core in undocumented, unsupported, invalid, and/or improper ways, such as:
+- Direct access to database tables;
+- Direct access to qb-core files that aren't meant to be used by other resources;
+- Invalid usages of existing functions;
+- And other unexpected ways not mentioned here.
 
 ## Who should use Qbox?
 
-Servers currently using QB and servers interested in running QB resources in the future
+Servers currently using QBCore and servers interested in running QBCore in the future.
 
-## Is Qbox ready to be used?
-Since qbx_core is backwards compatible with qb resources, we recommend using the released qbox resources only for a stable experience.
+## Is Qbox ready to use?
 
-## Which resources are released?
+Since qbx_core is backwards compatible with qb-core resources, we recommend using only the released Qbox resources for a stable experience.
 
-qbx_core
-qbx_divegear
-qbx_diving
-qbx_binoculars
-qbx_management
+## Which resources are ready to use?
 
-# Common Problems
+- [qbx_core](./resources/qbx_core)
+- [qbx_divegear](./resources/qbx_divegear)
+- [qbx_diving](./resources/qbx_diving)
+- [qbx_binoculars](./resources/qbx_binoculars)
+- [qbx_management](./resources/qbx_management)
 
-## No Such export GetCoreObject in resource qbx_core
-Qbox does not have the core object. However, you can continue to use exports['qb-core']:GetCoreObject() to get a core object from Qbox's QB bridge layer.
+## Common Problems
+
+### No such export GetCoreObject in resource qbx_core
+
+Qbox does not have the core object. However, you can continue to use `exports['qb-core']:GetCoreObject()` to get a core object from Qbox's QB bridge layer.

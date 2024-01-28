@@ -1,43 +1,43 @@
 import { Callout, Steps, Tabs } from 'nextra/components'
 
 # Installation
- 
-<Callout type="info" emoji="ℹ️">
-  We highly recommend using **txAdmin** to install your FiveM server.  
-  For detailed instructions, refer to [Setting up a server](https://docs.fivem.net/docs/server-manual/setting-up-a-server-txadmin/).
+
+<Callout type="info">
+  We highly recommend using **txAdmin** to install your FiveM server. \
+  For detailed instructions, refer to [Setting up a server using txAdmin](https://docs.fivem.net/docs/server-manual/setting-up-a-server-txadmin/).
 </Callout>
 
 <Steps>
-### Download the server
-1. Download the latest [FiveM artifacts](https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/) and extract the files.
+  ### Download the server
 
-### Start the server installation
-Run `FXServer.exe` to begin the installation and follow all the steps.
+  Download the latest [FiveM artifacts](https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/) and extract the files.
 
-### Deploy the recipe
-When prompted, select `Remote URL Template`  
-  
+  ### Start the server installation
 
-![Deployment Type](/txadmin-deployment-type.jpg)
+  Run `FXServer.exe` to begin the installation and follow all the steps.
 
+  ### Deploy the recipe
 
-Use the raw recipe link shown below.
+  When prompted, select `Remote URL Template`:
 
-<Tabs items={['QBox', 'Qbox Lean']} defaultIndex="0">
-<Tabs.Tab>
-```ansi filename="Qbox recipe" copy
-https://raw.githubusercontent.com/Qbox-project/txAdminRecipe/main/qbox.yaml
-```
-</Tabs.Tab>
-<Tabs.Tab>
-```ansi filename="Qbox Lean recipe" copy
-https://raw.githubusercontent.com/Qbox-project/txAdminRecipe/main/qbox-lean.yaml
-```
-</Tabs.Tab>
-</Tabs>
+  ![Deployment Type](/txadmin-deployment-type.jpg)
 
-### Run the server
+  Use the raw recipe link shown below.
 
-Once you have completed all of the installation steps, run the server.
+  <Tabs items={['Qbox', 'Qbox Lean']} defaultIndex="0">
+    <Tabs.Tab>
+      ```ansi filename="Qbox recipe" copy
+      https://raw.githubusercontent.com/Qbox-project/txAdminRecipe/main/qbox.yaml
+      ```
+    </Tabs.Tab>
+    <Tabs.Tab>
+      ```ansi filename="Qbox Lean recipe" copy
+      https://raw.githubusercontent.com/Qbox-project/txAdminRecipe/main/qbox-lean.yaml
+      ```
+    </Tabs.Tab>
+  </Tabs>
 
+  ### Run the server
+
+  Once you have completed all of the installation steps, run the server.
 </Steps>

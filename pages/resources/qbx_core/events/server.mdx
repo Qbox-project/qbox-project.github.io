@@ -1,0 +1,93 @@
+import { Callout } from "nextra/components";
+
+# Server Events
+
+<Callout type="warning">
+  These events **MUST NOT** be triggered by any other scripts.
+</Callout>
+
+<Callout type='info'>
+  Some of these events use custom types.
+  You can learn more about those in the Types section of this resource.
+</Callout>
+
+## Non-Networked Events
+
+### QBCore:Server:OnPlayerUnload
+
+Triggered when aplayer begins the process of logging out. \
+There is no guarantee that the player still exists in qbx_core's memory at the time this event is triggered.
+
+```lua
+AddEventHandler('QBCore:Server:OnPlayerUnload', function(src) end)
+```
+
+- src: `integer`
+
+### QBCore:Server:OnPermissionUpdate
+
+Triggered when the player's permissions are updated. \
+Only applies to permissions created through QB permission functions.
+
+```lua
+AddEventHandler('QBCore:Server:OnPermissionUpdate', function(src) end)
+```
+
+- src: `integer`
+
+### QBCore:Server:OnJobUpdate
+
+Triggered when a player's job updates.
+
+```lua
+AddEventHandler('QBCore:Server:OnJobUpdate', function(src, job) end)
+```
+
+- src: `integer`
+- job: `Job`
+
+### QBCore:Server:OnGangUpdate
+
+Triggered when a player's gang updates.
+
+```lua
+AddEventHandler('QBCore:Server:OnGangUpdate', function(src, gang) end)
+```
+
+- src: `integer`
+- gang: `Gang`
+
+### QBCore:Server:SetDuty
+
+Triggered when a player's job duty updates.
+
+```lua
+AddEventHandler('QBCore:Server:SetDuty', function(src, onDuty) end)
+```
+
+- src: `integer`
+- onDuty: `boolean`
+
+### QBCore:Server:OnMoneyChange
+
+Triggered when a player's cash/bank balance updates.
+
+```lua
+AddEventHandler('QBCore:Server:OnMoneyChange', function(src, moneyType, amount, operation, reason) end)
+```
+
+- src: `integer`
+- moneyType: `'cash' | 'bank' | 'crypto'`
+- amount: `number`
+- operation: `'add' | 'remove' | 'set'`
+- reason: `string`
+
+## Networked Events
+
+### QBCore:Server:OnPlayerLoaded
+
+Triggered when a player has finished loading.
+
+```lua
+RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function() end)
+```

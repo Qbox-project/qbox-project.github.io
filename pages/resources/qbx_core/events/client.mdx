@@ -1,0 +1,84 @@
+import { Callout } from "nextra/components";
+
+# Client Events
+
+<Callout type="warning">
+  These events **MUST NOT** be triggered by any other scripts.
+</Callout>
+
+<Callout type='info'>
+  Some of these events use custom types.
+  You can learn more about those in the Types section of this resource.
+</Callout>
+
+## Non-Networked Events
+
+### QBCore:Client:OnPlayerLoaded
+
+Triggered when the player finishes spawning.
+
+```lua
+AddEventHandler('QBCore:Client:OnPlayerLoaded', function() end)
+```
+
+## Networked Events
+
+### QBCore:Client:SetDuty
+
+Triggered when the player's job duty is updated.
+
+```lua
+RegisterNetEvent('QBCore:Client:SetDuty', function(onDuty) end)
+```
+
+- onDuty: `boolean`
+
+### QBCore:Client:OnPermissionUpdate
+
+Triggered when the player's permissions are updated. \
+Only works for permissions set via Qbox.
+
+```lua
+RegisterNetEvent('QBCore:Client:OnPermissionUpdate', function() end)
+```
+
+### qbx_core:client:playerLoggedOut
+
+Triggered when the player logs out and no longer exists in qbx_core's memory.
+
+```lua
+RegisterNetEvent('qbx_core:client:playerLoggedOut', function() end)
+```
+
+### QBCore:Client:OnJobUpdate
+
+Triggered when the player's job is updated.
+
+```lua
+RegisterNetEvent('QBCore:Client:OnJobUpdate', function(job) end)
+```
+
+- job: `Job`
+
+### QBCore:Client:OnGangUpdate
+
+Triggered when the player's gang is updated.
+
+```lua
+RegisterNetEvent('QBCore:Client:OnGangUpdate', function(gang) end)
+```
+
+- gang: `Gang`
+
+### QBCore:Client:OnMoneyChange
+
+Triggered when the player's cash/bank balance is updated.
+
+```lua
+RegisterNetEvent('QBCore:Client:OnMoneyChange', function(moneytype, amount, operation, reason) end)
+```
+
+- moneyType: `'cash' | 'bank' | 'crypto'`
+- amount: `number`
+- operation: `'add' | 'remove' | 'set'`
+- reason: `string`

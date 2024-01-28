@@ -1,0 +1,152 @@
+import { Callout } from 'nextra/components';
+
+# Shared Lib
+
+## armsWithoutGloves.male
+
+A set of male torso drawable variations that don't have gloves. \
+Used for [`qbx.isWearingGloves`](./client#iswearinggloves) and backwards compatibility.
+
+```lua
+qbx.armsWithoutGloves.male
+```
+
+Type: `table<integer, true>`
+
+## armsWithoutGloves.female
+
+A set of female torso drawable variations that don't have gloves. \
+Used for [`qbx.isWearingGloves`](./client#iswearinggloves) and backwards compatibility.
+
+```lua
+qbx.armsWithoutGloves.female
+```
+
+Type: `table<integer, true>`
+
+## string.trim
+
+Returns the given string with its trailing whitespaces removed.
+
+```lua
+qbx.string.trim(str)
+```
+
+- str: `string`
+
+Returns: `string`
+
+## string.capitalize
+
+Returns the given string with its first character capitalized.
+
+```lua
+qbx.string.capitalize(str)
+```
+
+- str: `string`
+
+Returns: `string`
+
+## math.round
+
+Rounds and returns the given number.
+
+```lua
+qbx.math.round(num, decimalPlaces)
+```
+
+- num: `number`
+- decimalPlaces?: `integer`
+
+Returns: `number`
+
+## table.mapBySubfield
+
+Maps and returns the values of the given table by the given subfield.
+
+```lua
+qbx.table.mapBySubfield(tble, subfield)
+```
+
+- tble: `table`
+- subfield: `any`
+
+Returns: `table<any, table[]>`
+
+```lua
+local tble = {
+  {
+    myCategory = 'first',
+    someValue = 1,
+  },
+  {
+    myCategory = 'second',
+    someValue = 2,
+  },
+}
+
+local mapped = qbx.table.mapBySubfield(tble, 'myCategory')
+
+print(json.encode(mapped))
+-- Output: { "first": [{ myCategory: "first", someValue: 1 }], "second": [{ myCategory: "second", someValue: 2 }] }
+```
+
+## getVehiclePlate
+
+Returns the number plate of the given vehicle, or `nil` if the vehicle or plate does not exist.
+
+```lua
+qbx.getVehiclePlate(vehicle)
+```
+
+- vehicle: `integer`
+
+Returns: `string?`
+
+## generateRandomPlate
+
+Generates and returns a random number plate with the given pattern. \
+Note that the generated plate may or may not be already used by an existing vehicle.
+
+<Callout type='info'>
+  For more info about the pattern see [`lib.string.random`](https://overextended.dev/ox_lib/Modules/String/Shared#stringrandom) from ox_lib.
+</Callout>
+
+```lua
+qbx.generateRandomPlate(pattern)
+```
+
+- pattern?: `string`
+
+Returns: `string`
+
+## getCardinalDirection
+
+Returns the cardinal direction that the given entity is staring towards.
+
+```
+                North
+    45°           0°           315°
+      \    .- - - - - - -.    /
+         X                 X
+       .'   \           /   '.
+      |        \     /        |
+West  |           X           |  East
+      |        /     \        |
+       '.   /           \   .'
+         X                 X
+      /    '- - - - - - -'    \
+    135°                      225°
+                South
+```
+
+(art inspired by [`SET_PED_TURNING_THRESHOLDS`](https://github.com/citizenfx/fivem/blob/0b61c93a3308360ea70d443398eab17f47453e11/code/components/extra-natives-five/src/PedExtraNatives.cpp#L390-L400))
+
+```lua
+qbx.getCardinalDirection(entity)
+```
+
+- entity: `integer`
+
+Returns: `'North' | 'South' | 'East' | 'West'`

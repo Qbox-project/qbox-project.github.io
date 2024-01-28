@@ -1,0 +1,162 @@
+# Player
+
+## Fields
+
+- [Functions](#functions): `table`
+- PlayerData: [`PlayerData`](./player_data)
+- Offline: `boolean`
+
+## Functions
+
+### SetJob
+
+Attempts to set the player's job with the given grade, and returns whether it was successful.
+
+```lua
+Player.Functions.SetJob(jobName, grade)
+```
+
+- jobName: `string`
+- grade: `integer`
+
+Returns: `boolean`
+
+### SetGang
+
+Attempts to set the player's gang with the given grade, and returns whether it was successful.
+
+```lua
+Player.Functions.SetGang(gangName, grade)
+```
+
+- gangName: `string`
+- grade: `integer`
+
+Returns: `boolean`
+
+### SetJobDuty
+
+Sets the player's duty.
+
+```lua
+Player.Functions.SetJobDuty(onDuty)
+```
+
+- onDuty: `boolean`
+
+### SetPlayerData
+
+Overwrites the given top level key of the PlayerData with the given value.
+
+```lua
+Player.Functions.SetPlayerData(key, val)
+```
+
+- key: `string`
+- val: `any`
+
+### SetMetaData
+
+Stores the given key value pair in the player's metadata.
+
+```lua
+Player.Functions.SetMetaData(meta, val)
+```
+
+- meta: `string`
+- val: `any`
+
+### GetMetaData
+
+Returns the value pair of the given key in the player's metadata.
+
+```lua
+Player.Functions.GetMetaData(meta)
+```
+
+- meta: `string`
+
+Returns: `any`
+
+### AddJobReputation
+
+Adds the given amount to the player's job reputation.
+
+```lua
+Player.Functions.AddJobReputation(amount)
+```
+
+- amount: `number`
+
+### AddMoney
+
+Attempts to add the given amount of money as the given type, and returns whether it was successful.
+
+```lua
+Player.Functions.AddMoney(moneytype, amount, reason)
+```
+
+- moneytype: `'cash' | 'bank' | 'crypto'`
+- amount: `number`
+- reason?: `string`
+
+Returns: `boolean`
+
+### RemoveMoney
+
+Attempts to subtract the given amount of money as the given type, and returns whether it was successful.
+
+```lua
+Player.Functions.RemoveMoney(moneytype, amount, reason)
+```
+
+- moneytype: `'cash' | 'bank' | 'crypto'`
+- amount: `number`
+- reason?: `string`
+
+Returns: `boolean`
+
+### SetMoney
+
+Attempts to set the given amount of money as the given type, and returns whether it was successful.
+
+```lua
+Player.Functions.SetMoney(moneytype, amount, reason)
+```
+
+- moneytype: `'cash' | 'bank' | 'crypto'`
+- amount: `number`
+- reason?: `string`
+
+Returns: `boolean`
+
+### GetMoney
+
+Returns the amount of money of the given type, or `false` if the type doesn't exist.
+
+```lua
+Player.Functions.GetMoney(moneytype)
+```
+
+- moneytype: `'cash' | 'bank' | 'crypto'`
+
+Returns: `number | false`
+
+### SetCreditCard
+
+Sets the player's owned credit card number. \
+Does not give the player's character any items.
+
+```lua
+Player.Functions.SetCreditCard(cardNumber)
+```
+
+- cardNumber: `number`
+
+### Save
+
+Saves the player's current character info to the database.
+
+```lua
+Player.Functions.Save()
+```
