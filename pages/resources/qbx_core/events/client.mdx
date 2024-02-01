@@ -82,3 +82,15 @@ RegisterNetEvent('QBCore:Client:OnMoneyChange', function(moneytype, amount, oper
 - amount: `number`
 - operation: `'add' | 'remove' | 'set'`
 - reason: `string`
+
+### qbx_core:client:onSetMetaData
+
+Triggered when player.Functions.setMetaData() is used.
+
+```lua
+RegisterNetEvent('qbx_core:client:onSetMetaData', function(key, oldValue, newValue) end)
+```
+
+- key: `string`
+- oldValue: `any`
+- newValue: `any`
