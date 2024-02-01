@@ -91,3 +91,15 @@ Triggered when a player has finished loading.
 ```lua
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function() end)
 ```
+
+### qbx_core:server:onSetMetaData
+
+Triggered when player.Functions.setMetaData() is used.
+
+```lua
+RegisterNetEvent('qbx_core:server:onSetMetaData', function(key, oldValue, newValue) end)
+```
+
+- key: `string`
+- oldValue: `any`
+- newValue: `any`
