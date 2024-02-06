@@ -97,10 +97,10 @@ RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function() end)
 Triggered when player.Functions.setMetaData() is used.
 
 ```lua
-RegisterNetEvent('qbx_core:server:onSetMetaData', function(source, key, oldValue, newValue) end)
+RegisterNetEvent('qbx_core:server:onSetMetaData', function(key, oldValue, newValue, source) end)
 ```
 
-- source `number`
 - key: `string`
 - oldValue: `any`
 - newValue: `any`
+- source `number`
