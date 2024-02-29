@@ -1,9 +1,25 @@
 # Job
 
+Extends: `JobData`
+
+## Fields
+
+- grades: `table<integer, JobGradeData>`
+
+# JobData
+
 ## Fields
 
 - label: `string`
 - type?: `string`
 - defaultDuty: `boolean`
 - offDutyPay: `boolean`
-- grades: `table<integer, { name: string, payment: number, isboss: boolean, bankAuth: boolean }>`
+
+# JobGradeData
+
+## Fields
+
+- name: `string`
+- isboss?: `boolean`
+- bankAuth?: `boolean`
+- payment: `number`
