@@ -38,6 +38,13 @@ Since qbx_core is backwards compatible with qb-core resources, we recommend usin
 - [qbx_management](./resources/qbx_management)
 - [qbx_radio](./resources/qbx_radio)
 
+## Are multijob resources compatible with Qbox?
+
+They can be, but only if calling qbx_core exports to add/modify/remove player's jobs.
+The two common issues with multijob resources are:
+- Directly accessing Qbox's database tables
+- Maintaining Qbox's core data in a resource's own table
+
 ## Common Problems
 
 ### No such export GetCoreObject in resource qbx_core

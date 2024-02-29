@@ -1,6 +1,21 @@
 # Gang
 
+Extends: `GangData`
+
+## Fields
+
+- grades: `table<integer, GangGradeData>`
+
+# GangData
+
 ## Fields
 
 - label: `string`
-- grades: `table<integer, { name: string, isboss: boolean, bankAuth: boolean }>`
+
+# GangGradeData
+
+## Fields
+
+- name: `string`
+- isboss?: `boolean`
+- bankAuth?: `boolean`
