@@ -14,7 +14,7 @@
   You can continue using `exports['qb-core']`, however, this means you won't get access to all the new Qbox features and functions, so consider switching off of `exports['qb-core']` when you can.
   Do note that undocumented and invalid usages of qb-core are not supported and may not be in the future.
   See the [FAQ](./faq#will-my-qbcore-scripts-work-with-qbox) for more details.
-6. Qbox has a multijob/gang system built into core that cannot be disabled. By default, players may only be in one job & gang. This can be overriden by setting `qbx:max_jobs_per_player` and `qbx:max_gangs_per_player` in server.cfg. 
+6. Qbox has a multijob/gang system built into core that cannot be disabled. By default, players may only be in one job & gang. This can be overriden by setting `qbx:max_jobs_per_player` and `qbx:max_gangs_per_player` in server.cfg.
   Do not use an external multijob/gang resource that isn't guaranteed by the developer to be Qbox compatible.
   Using incompatible multijobs or resources which modify core's database tables may lead to data corruption. First, double check that the player.citizenid column in your database has collation `utf8mb4_unicode_ci`. If not, change it.
   Then, run qbx_core.sql to create the new player_groups table. Start the server and type `convertjobs` into the txAdmin console once the server is running to populate the player_groups table.
