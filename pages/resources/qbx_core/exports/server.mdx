@@ -615,3 +615,72 @@ exports.qbx_core:RemoveGangGrade(gangName, grade)
 - gangName: `string`
 - grade: `integer`
 
+## SetPlayerPrimaryJob
+
+Sets the given player's primary job to the given job, only if they already have it.
+
+```lua
+exports.qbx_core:SetPlayerPrimaryJob(citizenid, jobName)
+```
+
+- citizenid: `string`
+- jobName: `string`
+
+## AddPlayerToJob
+
+Adds the given player to the given job, or overwrites their grade if they're already in that job.
+
+```lua
+exports.qbx_core:AddPlayerToJob(citizenid, jobName, grade)
+```
+
+- citizenid: `string`
+- jobName: `string`
+- grade: `integer`
+
+## RemovePlayerFromJob
+
+Removes the given player from the given job.
+Also updates the given player's primary job to unemployed if the given job is the player's primary.
+
+```lua
+exports.qbx_core:RemovePlayerFromJob(citizenid, jobName)
+```
+
+- citizenid: `string`
+- jobName: `string`
+
+## SetPlayerPrimaryGang
+
+Sets the given player's primary gang to the given gang, only if they already have it.
+
+```lua
+exports.qbx_core:SetPlayerPrimaryGang(citizenid, gangName)
+```
+
+- citizenid: `string`
+- gangName: `string`
+
+## AddPlayerToGang
+
+Adds the given player to the given gang, or overwrites their grade if they're already in that gang.
+
+```lua
+exports.qbx_core:AddPlayerToGang(citizenid, gangName, grade)
+```
+
+- citizenid: `string`
+- gangName: `string`
+- grade: `integer`
+
+## RemovePlayerFromGang
+
+Removes the given player from the given gang.
+Also updates the given player's primary gang to no gang if the given gang is the player's primary.
+
+```lua
+exports.qbx_core:RemovePlayerFromGang(citizenid, gangName)
+```
+
+- citizenid: `string`
+- gangName: `string`
