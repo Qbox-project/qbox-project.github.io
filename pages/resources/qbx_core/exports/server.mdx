@@ -496,24 +496,26 @@ Returns unique values for player identifiers.
 ```lua
 exports.qbx_core:GenerateUniqueIdentifier(type)
 ```
+
 - type: `'citizenid' | 'AccountNumber' | 'PhoneNumber' | 'FingerId' | 'WalletId' | 'SerialNumber'`
 
 Returns: `string | number`
 
 ## GetJob
 
-Returns the job if it exists
+Returns the given job if it exists.
 
 ```lua
 exports.qbx_core:GetJob(jobName)
-``` 
+```
+
 - jobName: `string`
 
 Returns: `Job?`
 
 ## GetGang
 
-Returns the gang if it exists
+Returns the given gang if it exists.
 
 ```lua
 exports.qbx_core:GetGang(gangName)
@@ -524,30 +526,41 @@ Returns: `Gang?`
 
 ## UpsertJobData
 
-Inserts or overwrites fields of a job temporarily. The changes are not \
-persisted after a restart.
+Inserts or overwrites fields of the given job temporarily.
+
+<Callout type='warning'>
+  This is a runtime-only change. This won't persist across restarts and won't modify files.
+</Callout>
 
 ```lua
 exports.qbx_core:UpsertJobData(jobName, data)
 ```
+
 - jobName: `string`
 - data: `JobData`
 
 ## UpsertGangData
 
-Inserts or overwrites fields of a gang temporarily. The changes are not \
-persisted after a restart.
+Inserts or overwrites fields of the given gang temporarily.
+
+<Callout type='warning'>
+  This is a runtime-only change. This won't persist across restarts and won't modify files.
+</Callout>
 
 ```lua
 exports.qbx_core:UpsertGangData(gangName, data)
 ```
+
 - gangName: `string`
 - data: `GangData`
 
 ## UpsertJobGrade
 
-Inserts or overwrites fields of a job's grade temporarily. The changes are not \
-persisted after a restart.
+Inserts or overwrites fields of the given job's grade temporarily.
+
+<Callout type='warning'>
+  This is a runtime-only change. This won't persist across restarts and won't modify files.
+</Callout>
 
 ```lua
 exports.qbx_core:UpsertJobGrade(jobName, grade, data)
@@ -558,33 +571,47 @@ exports.qbx_core:UpsertJobGrade(jobName, grade, data)
 
 ## UpsertGangGrade
 
-Inserts or overwrites fields of a gang's grade temporarily. The changes are not \
-persisted after a restart.
+Inserts or overwrites fields of the given gang's grade temporarily.
+
+<Callout type='warning'>
+  This is a runtime-only change. This won't persist across restarts and won't modify files.
+</Callout>
 
 ```lua
 exports.qbx_core:UpsertGangGrade(gangName, grade, data)
 ```
+
 - gangName: `string`
 - grade: `integer`
 - data: `GangGradeData`
 
 ## RemoveJobGrade
 
-Removes a job's grade temporarily. The changes are notpersisted after a restart.
+Removes the given job's grade temporarily.
+
+<Callout type='warning'>
+  This is a runtime-only change. This won't persist across restarts and won't modify files.
+</Callout>
 
 ```lua
 exports.qbx_core:RemoveJobGrade(jobName, grade)
 ```
+
 - jobName: `string`
 - grade: `integer`
 
 ## RemoveGangGrade
 
-Removes a gang's grade temporarily. The changes are not persisted after a restart.
+Removes the given gang's grade temporarily.
+
+<Callout type='warning'>
+  This is a runtime-only change. This won't persist across restarts and won't modify files.
+</Callout>
 
 ```lua
 exports.qbx_core:RemoveGangGrade(gangName, grade)
 ```
+
 - gangName: `string`
 - grade: `integer`
 
