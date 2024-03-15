@@ -284,7 +284,11 @@ exports.qbx_core:IsWhitelisted(source)
 
 Returns: `boolean`
 
-## AddPermission
+## ~~AddPermission~~
+
+<Callout type='warning'>
+  Deprecated as of v1.8.0. Use ox_lib ACE permissions instead
+</Callout>
 
 Adds the given permission to the given player.
 
@@ -295,7 +299,11 @@ exports.qbx_core:AddPermission(source, permission)
 - source: `integer`
 - permission: `string`
 
-## RemovePermission
+## ~~RemovePermission~~
+
+<Callout type='warning'>
+  Deprecated as of v1.8.0. Use ox_lib ACE permissions instead
+</Callout>
 
 Removes the given permission from the given player.
 
@@ -306,7 +314,11 @@ exports.qbx_core:RemovePermission(source, permission)
 - source: `integer`
 - permission: `string`
 
-## HasPermission
+## ~~HasPermission~~
+
+<Callout type='warning'>
+  Deprecated as of v1.8.0. Use ACE permissions instead.
+</Callout>
 
 Returns whether the given player has the given permission.
 
@@ -319,7 +331,11 @@ exports.qbx_core:HasPermission(source, permission)
 
 Returns: `boolean`
 
-## GetPermission
+## ~~GetPermission~~
+
+<Callout type='warning'>
+  Deprecated as of v1.8.0. Use ACE permissions instead.
+</Callout>
 
 Gets the given player's permissions.
 
@@ -500,29 +516,6 @@ exports.qbx_core:GenerateUniqueIdentifier(type)
 - type: `'citizenid' | 'AccountNumber' | 'PhoneNumber' | 'FingerId' | 'WalletId' | 'SerialNumber'`
 
 Returns: `string | number`
-
-## GetJob
-
-Returns the given job if it exists.
-
-```lua
-exports.qbx_core:GetJob(jobName)
-```
-
-- jobName: `string`
-
-Returns: `Job?`
-
-## GetGang
-
-Returns the given gang if it exists.
-
-```lua
-exports.qbx_core:GetGang(gangName)
-``` 
-- gangName: `string`
-
-Returns: `Gang?`
 
 ## UpsertJobData
 

@@ -27,6 +27,29 @@ exports.qbx_core:GetGangs()
 
 Returns: `table<string, Gang>`
 
+## GetJob
+
+Returns the given job if it exists.
+
+```lua
+exports.qbx_core:GetJob(jobName)
+```
+
+- jobName: `string`
+
+Returns: `Job?`
+
+## GetGang
+
+Returns the given gang if it exists.
+
+```lua
+exports.qbx_core:GetGang(gangName)
+``` 
+- gangName: `string`
+
+Returns: `Gang?`
+
 ## GetVehiclesByName
 
 Returns a table mapping vehicle name to vehicle.
