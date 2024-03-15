@@ -70,6 +70,17 @@ RegisterNetEvent('QBCore:Client:OnGangUpdate', function(gang) end)
 
 - gang: `Gang`
 
+### qbx_core:client:onGroupUpdate
+
+Triggered when the player's groups are updated. If grade is nil then group was removed otherwise group was added
+
+```lua
+RegisterNetEvent('qbx_core:client:onGroupUpdate', function(groupName, groupGrade) end)
+```
+
+- groupName: `string`
+- groupGrade: `number?`
+
 ### QBCore:Client:OnMoneyChange
 
 Triggered when the player's cash/bank balance is updated.

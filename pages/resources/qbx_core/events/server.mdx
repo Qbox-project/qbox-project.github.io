@@ -68,6 +68,17 @@ AddEventHandler('QBCore:Server:SetDuty', function(src, onDuty) end)
 - src: `integer`
 - onDuty: `boolean`
 
+### qbx_core:server:onGroupUpdate
+
+Triggered when the player's groups are updated. If grade is nil then group was removed otherwise group was added
+
+```lua
+AddEventHandler('qbx_core:server:onGroupUpdate', function(groupName, groupGrade) end)
+```
+
+- groupName: `string`
+- groupGrade: `number?`
+
 ### QBCore:Server:OnMoneyChange
 
 Triggered when a player's cash/bank balance updates.
