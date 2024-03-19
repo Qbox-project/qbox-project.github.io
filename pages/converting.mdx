@@ -13,10 +13,12 @@ import {Steps, Callout} from 'nextra/components'
 ### Qbox has a queue system built into qbx_core.
   If you want to keep using your own queue system, specify `set qbx:enablequeue "false"` inside your cfg file.
   Otherwise you can disable or delete your old queue system.
-### Modify your `players` table
+### Run the SQL file provided with qbx_core
+This will alter the players table in the following ways:
 - Add to the `players` table to add the new column `last_logged_out`
-- Change the collation of players.citizenid column to `utf8mb4_unicode_ci` you may also need to change citizenid columns to this collation in other tables
-if they have a foreign key constraint to the players table.
+- Change the collation of players.citizenid column to `utf8mb4_unicode_ci`
+
+Note: You may need to manually change the collation of other tables' citizenid column if you get an error that a foreign key constraint was violated.
 ### Configure multijob/multigang
   Qbox has a multijob/gang system built into core that cannot be disabled. By default, players may only be in one job & gang. This can be overriden by setting `qbx:max_jobs_per_player` and `qbx:max_gangs_per_player` in server.cfg.
   Do not use an external multijob/gang resource that isn't guaranteed by the developer to be Qbox compatible.
