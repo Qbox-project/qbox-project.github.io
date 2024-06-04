@@ -19,10 +19,10 @@ Triggered when aplayer begins the process of logging out. \
 There is no guarantee that the player still exists in qbx_core's memory at the time this event is triggered.
 
 ```lua
-AddEventHandler('QBCore:Server:OnPlayerUnload', function(src) end)
+AddEventHandler('QBCore:Server:OnPlayerUnload', function(source) end)
 ```
 
-- src: `integer`
+- source: `integer`
 
 ### QBCore:Server:OnPermissionUpdate
 
@@ -30,20 +30,20 @@ Triggered when the player's permissions are updated. \
 Only applies to permissions created through QB permission functions.
 
 ```lua
-AddEventHandler('QBCore:Server:OnPermissionUpdate', function(src) end)
+AddEventHandler('QBCore:Server:OnPermissionUpdate', function(source) end)
 ```
 
-- src: `integer`
+- source: `integer`
 
 ### QBCore:Server:OnJobUpdate
 
 Triggered when a player's job updates.
 
 ```lua
-AddEventHandler('QBCore:Server:OnJobUpdate', function(src, job) end)
+AddEventHandler('QBCore:Server:OnJobUpdate', function(source, job) end)
 ```
 
-- src: `integer`
+- source: `integer`
 - job: `Job`
 
 ### QBCore:Server:OnGangUpdate
@@ -51,10 +51,10 @@ AddEventHandler('QBCore:Server:OnJobUpdate', function(src, job) end)
 Triggered when a player's gang updates.
 
 ```lua
-AddEventHandler('QBCore:Server:OnGangUpdate', function(src, gang) end)
+AddEventHandler('QBCore:Server:OnGangUpdate', function(source, gang) end)
 ```
 
-- src: `integer`
+- source: `integer`
 - gang: `Gang`
 
 ### QBCore:Server:SetDuty
@@ -62,10 +62,10 @@ AddEventHandler('QBCore:Server:OnGangUpdate', function(src, gang) end)
 Triggered when a player's job duty updates.
 
 ```lua
-AddEventHandler('QBCore:Server:SetDuty', function(src, onDuty) end)
+AddEventHandler('QBCore:Server:SetDuty', function(source, onDuty) end)
 ```
 
-- src: `integer`
+- source: `integer`
 - onDuty: `boolean`
 
 ### qbx_core:server:onGroupUpdate
@@ -73,9 +73,10 @@ AddEventHandler('QBCore:Server:SetDuty', function(src, onDuty) end)
 Triggered when the player's groups are updated. If grade is nil then group was removed otherwise group was added
 
 ```lua
-AddEventHandler('qbx_core:server:onGroupUpdate', function(groupName, groupGrade) end)
+AddEventHandler('qbx_core:server:onGroupUpdate', function(source, groupName, groupGrade) end)
 ```
 
+- source: `integer`
 - groupName: `string`
 - groupGrade: `number?`
 
@@ -84,10 +85,10 @@ AddEventHandler('qbx_core:server:onGroupUpdate', function(groupName, groupGrade)
 Triggered when a player's cash/bank balance updates.
 
 ```lua
-AddEventHandler('QBCore:Server:OnMoneyChange', function(src, moneyType, amount, operation, reason) end)
+AddEventHandler('QBCore:Server:OnMoneyChange', function(source, moneyType, amount, operation, reason) end)
 ```
 
-- src: `integer`
+- source: `integer`
 - moneyType: `'cash' | 'bank' | 'crypto'`
 - amount: `number`
 - operation: `'add' | 'remove' | 'set'`

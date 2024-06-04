@@ -1,0 +1,29 @@
+# hooks
+
+Event hooks allow 3rd party resources to define new behaviour without modifying your resource directly.
+
+## registerHook
+
+Registers a callback function to be triggered by a resource. Returning false from the callback function cancels the event
+
+```lua
+exports.my_resource:registerHook(eventName, cb)
+```
+
+- eventName: `string`
+- payload: `table`
+
+Return:
+
+- hookId: `number`
+
+## removeHooks
+
+Remove a previously registered hook by it's id.
+If no id is provided then all hooks registered by the resource are removed.
+
+```lua
+exports.my_resource:removeHooks(id)
+```
+
+- id?: `number`

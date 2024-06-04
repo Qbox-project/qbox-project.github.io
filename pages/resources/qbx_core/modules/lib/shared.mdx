@@ -61,15 +61,27 @@ qbx.math.round(num, decimalPlaces)
 
 Returns: `number`
 
+## table.size
+
+Returns the number of items in a table. Useful for non-array tables.
+
+```lua
+qbx.table.size(tbl)
+```
+
+- tbl: `table`
+
+Returns: `integer`
+
 ## table.mapBySubfield
 
 Maps and returns the values of the given table by the given subfield.
 
 ```lua
-qbx.table.mapBySubfield(tble, subfield)
+qbx.table.mapBySubfield(tbl, subfield)
 ```
 
-- tble: `table`
+- tbl: `table`
 - subfield: `any`
 
 Returns: `table<any, table[]>`
