@@ -1,0 +1,27 @@
+# hooks
+
+## registerHook
+
+Registers a callback function to be triggered by a resource. Returning false from the callback function cancels the event
+
+```lua
+exports.qbx_core:registerHook(eventName, cb)
+```
+
+- eventName: `string`
+- payload: `table`
+
+Return:
+
+- hookId: `number`
+
+## removeHooks
+
+Remove a previously registered hook by it's id.
+If no id is provided then all hooks registered by the resource are removed.
+
+```lua
+exports.qbx_core:removeHooks(id)
+```
+
+- id?: `number`

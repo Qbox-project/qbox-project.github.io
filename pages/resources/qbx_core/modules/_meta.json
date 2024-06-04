@@ -1,5 +1,6 @@
 {
   "lib": "lib",
+  "hooks": "hooks",
   "logger": "logger",
   "playerdata": "playerdata"
 }
