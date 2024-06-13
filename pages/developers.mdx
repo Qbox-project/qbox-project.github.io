@@ -6,7 +6,7 @@ Following these principles will make it less likely for your script to break in 
 ## Do not access database tables owned by core
 
 Doing this will break your script if the database schema changes in the future.
-If the data you need can't be read or written using a core function,
+If the data you need can't be read or written using a qbx_core/qbx_vehicles export,
 create a GitHub issue so we can rectify the problem for everyone.
 
 ## Do not modify core code
@@ -23,3 +23,9 @@ These are likely to be removed in future updates.
 
 ## Set statebag when spawning an owned vehicle
 When spawning a vehicle that is owned by a player, the vehicle's vehicleid statebag needs to be set to the id from the player_vehicles table. Qbox resources will assume this is set, and that any vehicle that doesn't have this statebag is not owned by a player.
+
+## To set vehicle properties when spawning a vehicle, pass the properties into the spawnVehicle function
+Do not manually set the properties after the vehicle exists. This is an anti-pattern and may cause issues if the client is not the entity owner.
+
+## Do not rely on unversioned/unreleased resources
+We make no guarantees about rapid breaking changes in these resources. They are not stable.
