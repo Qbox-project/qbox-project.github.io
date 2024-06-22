@@ -1,0 +1,121 @@
+import { Callout } from 'nextra/components';
+
+# Server Exports
+
+## CreatePlayerVehicle
+
+Sets the owner of the vehicle, or if citizenid is nil, sets the vehicle to have no owner.
+
+```lua
+exports.qbx_vehicles:CreatePlayerVehicle(request)
+```
+
+- request: `table`
+    - model: `string`
+    - citizenid?: `string`
+    - garage?: `string`
+    - props?: [ox_lib vehicle properties](https://github.com/overextended/ox_lib/blob/master/resource/vehicleProperties/client.lua#L3)
+
+Returns:
+
+- vehicleId?: `integer`
+- errorResult?: `{code: string, message: string}`
+
+Error Codes: N/A
+
+## DeletePlayerVehicles
+
+Delete player vehicles matching some identifier. Only handles deleting from the database.
+
+```lua
+exports.qbx_vehicles:DeletePlayerVehicles(idType, idValue)
+```
+
+- idType: `'citizenid' | 'license' | 'plate' | 'vehicleId'`
+- idValue: `string | number`
+
+Returns:
+
+- success: `boolean`
+- errorResult?: `{code: string, message: string}`
+
+Error Codes: N/A
+
+## DoesPlayerVehiclePlateExist
+
+Returns whether a player owned vehicle has the matching plate
+
+```lua
+exports.qbx_vehicles:DoesPlayerVehiclePlateExist(plate)
+```
+
+- plate: `string`
+
+Returns: `boolean`
+
+## GetPlayerVehicle
+
+Queries a player vehicle by vehicleId. Can optionally pass filter criteria.
+
+```lua
+exports.qbx_vehicles:GetPlayerVehicle(vehicleId, filters)
+```
+
+- vehicleId: `number`
+- filters?: [PlayerVehiclesFilters](#playervehiclesfilters)
+
+Returns: [PlayerVehicle](#playervehicle)?
+
+## GetPlayerVehicles
+
+Queries player vehicles by various filter criteria. If no filters are set, queries all vehicles.
+
+```lua
+exports.qbx_vehicles:GetPlayerVehicles(filters)
+```
+
+- filters?: [PlayerVehiclesFilters](#playervehiclesfilters)
+
+Returns: [PlayerVehicle](#playervehicle)[]
+
+## SetPlayerVehicleOwner
+
+Sets the owner of the vehicle, or if citizenid is nil, sets the vehicle to have no owner.
+
+```lua
+exports.qbx_vehicles:SetPlayerVehicleOwner(vehicleId, citizenid)
+```
+
+- vehicleId: `integer`
+- citizenid?: `string`
+
+Returns:
+
+- success: `boolean`
+- errorResult?: `{code: string, message: string}`
+
+Error Codes: N/A
+
+## Common Types
+
+### VehicleState
+
+- OUT = 0
+- GARAGED = 1
+- IMPOUNDED = 2
+
+### PlayerVehicle
+
+- id: `integer`
+- citizenid?: `string`
+- modelName: `string`
+- garage: `string`
+- state: [VehicleState](#vehiclestate)
+- depotPrice: `integer`
+- props: [ox_lib vehicle properties](https://github.com/overextended/ox_lib/blob/master/resource/vehicleProperties/client.lua#L3)
+
+### PlayerVehiclesFilters
+
+- citizenid?: `string`
+- states?: `VehicleState | VehicleState[]`
+- garage?: `string`
