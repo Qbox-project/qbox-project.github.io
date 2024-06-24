@@ -677,3 +677,19 @@ exports.qbx_core:RemovePlayerFromGang(citizenid, gangName)
 
 - citizenid: `string`
 - gangName: `string`
+
+## HasPrimaryGroup
+
+Checks if the given player's current Job/Gang or citizenid matches against a single group, array of group, or group/grade or list of citizenids. Does not check if player is on or off duty
+
+```lua
+exports.qbx_core:HasPrimaryGroup(source, filter)
+```
+
+- source: `integer`
+- filter: `string` or `string[]` or `table<string, number>`
+  - A group/citizenid, array of groups/citizenids, or pairs of groups-grades required to pass the check.
+
+Returns:
+
+- success: `boolean`

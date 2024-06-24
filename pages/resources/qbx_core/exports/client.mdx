@@ -36,3 +36,18 @@ exports.qbx_core:Notify(text, notifyType, duration, subTitle, notifyPosition, no
   - Custom color for `notifyIcon`.
 
 [`lib.notify`]: https://overextended.dev/ox_lib/Modules/Interface/Client/notify#libnotify
+
+## HasPrimaryGroup
+
+Checks if the player's current Job/Gang or citizenid matches against a single group, array of group, or group/grade or list of citizenids. Does not check if player is on or off duty
+
+```lua
+exports.qbx_core:HasPrimaryGroup(filter)
+```
+
+- filter: `string` or `string[]` or `table<string, number>`
+  - A group/citizenid, array of groups/citizenids, or pairs of groups-grades required to pass the check.
+
+Returns:
+
+- success: `boolean`
