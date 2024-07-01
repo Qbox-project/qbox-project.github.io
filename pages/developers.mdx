@@ -22,7 +22,7 @@ We'll see if we can trigger an event for you, surface a config value, or re-desi
 These are likely to be removed in future updates.
 
 ## Set statebag when spawning an owned vehicle
-When spawning a vehicle that is owned by a player, the vehicle's vehicleid statebag needs to be set to the id from the player_vehicles table. Qbox resources will assume this is set, and that any vehicle that doesn't have this statebag is not owned by a player.
+When spawning a vehicle that is owned by a player, the vehicle's vehicleid statebag should be set to the id from the player_vehicles table. This allows other resources to look up info about the vehicle in the database using a stable identifier
 
 ## To set vehicle properties when spawning a vehicle, pass the properties into the spawnVehicle function
 Do not manually set the properties after the vehicle exists. This is an anti-pattern and may cause issues if the client is not the entity owner.
