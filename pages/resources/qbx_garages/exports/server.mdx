@@ -1,0 +1,25 @@
+# Server Exports
+
+## RegisterGarage
+
+Registers a garage at runtime. This is an alternative to defining them in the qbx_garages config.
+
+```lua
+exports.qbx_garages:RegisterGarage(name, config)
+```
+
+## SetVehicleGarage
+
+Sets the vehicle's garage. Only affects the database.
+
+```lua
+exports.qbx_garages:SetVehicleGarage(vehicleId, garageName)
+```
+
+## SetVehicleDepotPrice
+
+Sets the price to take the car out of the depot
+
+```lua
+exports.qbx_garages:SetVehicleDepotPrice(vehicleId, depotPrice)
+```
