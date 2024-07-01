@@ -1,0 +1,47 @@
+# Hooks
+
+Event hooks allow 3rd party resources to define new behavior without modifying qbx_vehicles code directly.
+
+## registerHook
+
+Registers a callback function to be triggered by a resource. Returning false from the callback function cancels the event
+
+```lua
+exports.qbx_vehicles:registerHook(eventName, function(payload) end)
+```
+
+- eventName: `string`
+- payload: `table`
+
+Return:
+
+- hookId: `number`
+
+### createPlayerVehicle
+
+Triggered when a new vehicle is created. Return `false` to cancel the creation
+
+- payload: `table`
+    - citizenid: `string`
+    - garage: `string`
+    - props: table
+
+### changeVehicleOwner
+
+Triggered when a vehicle's owner changes. Return `false` to cancel the change.
+
+- payload: `table`
+    - vehicleId: `integer`
+    - newCitizenId: `string`
+
+## removeHooks
+
+Remove a previously registered hook by it's id.
+If no id is provided then all hooks registered by the resource are removed.
+
+```lua
+exports.qbx_vehicles:removeHooks(id)
+```
+
+- id?: `number`
+
