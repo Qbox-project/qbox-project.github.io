@@ -108,6 +108,30 @@ exports.qbx_vehicles:GetVehicleIdByPlate(plate)
 
 Returns vehicleId?: `integer`
 
+## SaveVehicle
+
+Update an existing vehicle's attributes
+
+```lua
+exports.qbx_vehicles:SaveVehicle(vehicle, options)
+```
+
+- vehicle: `number` entity
+- options: `table`
+    - garage?: `string`
+    - state?: [VehicleState](#vehiclestate)
+    - depotPrice?: `integer`
+    - props?: [ox_lib vehicle properties](https://github.com/overextended/ox_lib/blob/master/resource/vehicleProperties/client.lua#L3)
+
+Returns:
+
+- success: `boolean`
+- errorResult?: `{code: string, message: string}`
+
+Error Codes:
+
+- not_owned: unable to locate the vehicle's row in the player_vehicles table
+
 ## Common Types
 
 ### VehicleState
