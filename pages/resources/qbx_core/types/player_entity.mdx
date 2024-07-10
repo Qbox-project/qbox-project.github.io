@@ -34,6 +34,7 @@ title: PlayerEntity
   - grade: `table`
     - name: `string`
     - level: `number`
+- jobs: `table<string, integer>` maps job name to job grade that the player has. Unemployed not included.
 - gang: `table`
   - name: `string`
   - label: `string`
@@ -41,6 +42,7 @@ title: PlayerEntity
   - grade: `table`
     - name: `string`
     - level: `number`
+- gangs: `table<string, integer>` maps gang name to gang grade that the player has. None gang not included.
 - position: `vector4`
 - metadata: `table`
   - health: `number`
