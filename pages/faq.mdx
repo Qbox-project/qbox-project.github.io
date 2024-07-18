@@ -50,6 +50,7 @@ The two common issues with multijob resources are:
 - Directly accessing Qbox's database tables
 - Maintaining Qbox's core data in a resource's own table
 
+
 ## Common Problems
 
 ### No such export GetCoreObject in resource qbx_core
@@ -58,4 +59,20 @@ Qbox does not have the core object. However, you can continue to use `exports['q
 
 ### [WARN] This resource is still using the deprecated qbx_core utils! ###
 
-This is purely a warning that can be ignored. QBox resources are actively being worked on to remove dependency on the legacy qbx_core utils module and move to the new qbx_core lib module.
+If you are receiving this warning then please download the latest release/commit for that resource. With the exception of the following archived resources this dependency has been resolved
+
+- qbx_fitbit (archived)
+- qbx_traphouse (archived)
+- qbx_tunerchip (archived)
+- qbx_crypto (archived)
+- qbx_apartments (archived)
+- qbx_houses (archived)
+- qbx_phone (archived)
+
+### Can I use my own multicharacter?
+
+Yes, you can. To disable the built in multicharacter change this setting to true in `qbx_core/config/client.lua`
+```lua filename="qbx_core/config/client.lua"
+    useExternalCharacters = false, -- Whether you have an external character management resource. (If true, disables the character management inside the core)
+```
+
