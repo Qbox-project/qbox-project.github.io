@@ -56,7 +56,7 @@ const config: DocsThemeConfig = {
   chat: {
     link: "https://discord.gg/qbox",
   },
-  docsRepositoryBase: "https://github.com/Qbox-project/qbox-project.github.io",
+  docsRepositoryBase: "https://github.com/Qbox-project/qbox-project.github.io/blob/main",
   footer: {
     text: "Qbox Project",
   },
