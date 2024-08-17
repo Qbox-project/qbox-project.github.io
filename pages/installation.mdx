@@ -24,20 +24,36 @@ import { Callout, Steps, Tabs } from 'nextra/components'
 
   Use the raw recipe link shown below.
 
-  <Tabs items={[ 'Qbox Stable', 'Qbox Unstable', 'Qbox Lean']} defaultIndex="0">
-     <Tabs.Tab>
-      ```ansi filename="Qbox Stable Recipe" copy
-      https://raw.githubusercontent.com/Qbox-project/txAdminRecipe/main/qbox-stable.yaml
-      ```
-    </Tabs.Tab>
+  <Tabs items={[ 'Qbox Unstable', 'Qbox Lean', 'Qbox Stable']} defaultIndex="0">
     <Tabs.Tab>
+      The Qbox Unstable Recipe comes with *all* of our actively maintained resources. \
+      Use this if you're looking for a complete server base.
+
       ```ansi filename="Qbox Unstable Recipe" copy
       https://raw.githubusercontent.com/Qbox-project/txAdminRecipe/main/qbox.yaml
       ```
     </Tabs.Tab>
     <Tabs.Tab>
+      The Qbox Lean Recipe is a stripped down version of Qbox, without excess resources,
+      and it does not include any criminal or civilian activities. \
+      Use this if you're looking for a smaller server base to build off of.
+
       ```ansi filename="Qbox Lean Recipe" copy
       https://raw.githubusercontent.com/Qbox-project/txAdminRecipe/main/qbox-lean.yaml
+      ```
+    </Tabs.Tab>
+    <Tabs.Tab>
+      The Qbox Stable Recipe comes with the resources we consider stable, based on our [Release Readiness](./release) guidelines. \
+      Use this if you're looking for the most stable experience.
+
+      <Callout type="warning">
+        Since many Qbox resources are still a work-in-progress, some important resources are still considered unstable,
+        and are currently missing from this recipe. This may result in various issues.
+        You are expected to find alternatives by yourself, or to download the unstable versions of those resources.
+      </Callout>
+
+      ```ansi filename="Qbox Stable Recipe" copy
+      https://raw.githubusercontent.com/Qbox-project/txAdminRecipe/main/qbox-stable.yaml
       ```
     </Tabs.Tab>
   </Tabs>
