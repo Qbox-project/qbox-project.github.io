@@ -51,3 +51,30 @@ exports.qbx_core:HasPrimaryGroup(filter)
 Returns:
 
 - success: `boolean`
+
+## HasGroup
+
+Checks if the player's list of groups (Jobs/Gangs) or citizenid matches against a single group, array of group, or group/grade or list of citizenids. Does not check if player is on or off duty
+
+```lua
+exports.qbx_core:HasGroup(filter)
+```
+
+- filter: `string` or `string[]` or `table<string, number>`
+  - A group/citizenid, array of groups/citizenids, or pairs of groups-grades required to pass the check.
+
+Returns:
+
+- success: `boolean`
+
+## GetGroups
+
+Returns a combined table of all the groups the current player currently has.
+
+```lua
+exports.qbx_core:GetGroups()
+```
+
+Returns:
+
+- groups: `table<string, number>`

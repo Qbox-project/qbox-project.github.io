@@ -154,6 +154,16 @@ exports.qbx_core:GetQBPlayers()
 
 Returns: `table<integer, Player>`
 
+## GetPlayersData
+
+Returns all PlayerData tables for all active players.
+
+```lua
+exports.qbx_core:GetPlayersData()
+```
+
+Returns: `PlayerData[]`
+
 ## GetDutyCountJob
 
 Returns the amount of players that are on-duty in the given job, and a list of their IDs.
@@ -693,3 +703,58 @@ exports.qbx_core:HasPrimaryGroup(source, filter)
 Returns:
 
 - success: `boolean`
+
+## HasGroup
+
+Checks if the given player's list of groups (Jobs/Gangs) or citizenid matches against a single group, array of group, or group/grade or list of citizenids. Does not check if player is on or off duty for any particular filter
+
+```lua
+exports.qbx_core:HasGroup(source, filter)
+```
+- source: `integer`
+- filter: `string` or `string[]` or `table<string, number>`
+  - A group/citizenid, array of groups/citizenids, or pairs of groups-grades required to pass the check.
+
+Returns:
+
+- success: `boolean`
+
+## GetGroups
+
+Returns a combined table of all the groups a given player currently has.
+
+```lua
+exports.qbx_core:GetGroups(source)
+```
+
+- source: `integer`
+
+Returns:
+
+- `table<string, number>`
+
+## IsGradeBoss
+
+Returns boolean on if a given group/grade combination is a boss grade. Currently this is based on the presence of a `isboss` boolean being true in the grade definition
+
+```lua
+exports.qbx_core:IsGradeBoss(group, grade)
+```
+
+- group: `string`
+- grade: `integer`
+
+Returns:
+
+- success: `boolean`
+
+## GetGroupMembers
+
+Returns a table of all citizenids and associated grade for a given group and type
+
+- group: `string`
+- type: `job|gang`
+
+Returns:
+
+- `table<citizenid, number>`
