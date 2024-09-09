@@ -27,3 +27,31 @@ exports.my_resource:removeHooks(id)
 ```
 
 - id?: `number`
+
+## Usage
+
+An example hook setup in your resource
+
+```lua
+local triggerEventHooks = require '@qbx_core.modules.hooks' -- Import triggerEventHooks function from hooks module
+
+-- Example of some sort of event that could be in your resource
+RegisterNetEvent('your_resource:server:check_condition', function(source)
+    -- Checks to see if any registered hooks return false
+	if not triggerEventHooks('checkCondition', {source = source, myNumber = 10}) then return end 
+    -- Do stuff
+end)
+```
+
+Now a 3rd party resource can modify the behavior of your resource without having to change any of your code
+
+```lua
+exports.qbx_core:registerHook('checkCondition', function(payload)
+  -- payload contains everything passed into triggerEventHooks, which will depend on the resource to document
+  if payload.myNumber == 10 then
+    return true -- Continue as normal
+  else
+    return false -- Stop execution
+  end
+end)
+```
