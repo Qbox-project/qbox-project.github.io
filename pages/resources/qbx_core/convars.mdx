@@ -119,3 +119,14 @@ set qbx:disableoverridewarning true
 ```
 
 Type: `boolean`
+
+## qbx:qbx:enableVehiclePersistence
+
+When enabled, player owned vehicles deleted by the server which have persistence enabled on them (either via having spawned using qbx.spawnVehicle or through exports.qbx_core:EnablePersistence), will be respawned with the same properties as when the vehicle was deleted.
+This is a fix to a FiveM bug which can result in vehicles randomly being deleted; ensuring that vehicles that players leave, will be there when they return.
+
+```lua
+set qbx:enableVehiclePersistence
+```
+
+Type: `boolean`

@@ -758,3 +758,44 @@ Returns a table of all citizenids and associated grade for a given group and typ
 Returns:
 
 - `table<citizenid, number>`
+
+## DeleteVehicle
+
+Deletes the vehicle entity from the game world. Preferred over the native DeleteEntity function as DeleteVehicle will remove persistence from the vehicle to allow it to be deleted.
+
+```lua
+exports.qbx_core:DeleteVehicle(entity)
+```
+
+- entity: `number`
+
+## EnablePersistence
+
+Marks a vehicle to be persisted, which will respawn the vehicle with the same properties if it is deleted by the server. Idempotent.
+
+```lua
+exports.qbx_core:EnablePersistence(entity)
+```
+
+- entity: `number`
+
+## DisablePersistence
+
+Removes the persistence attribute from a vehicle, allowing it to be deleted without being respawned. Idempotent. No-op if the vehicle is not already persisted.
+
+```lua
+exports.qbx_core:DisablePersistence(entity)
+```
+
+- entity: `number`
+
+## GetVehicleClass
+
+Equivalent to [GetVehicleClass](https://docs.fivem.net/natives/?_0x29439776AAA00A62) client native, but for the server. Works by asking a random client for all the vehicle models and their classes, then caching this while the server is online.
+Due to this, may not work if there is no client on to query.
+
+```lua
+exports.qbx_core:GetVehicleClass(hash)
+```
+
+- hash: `number`

@@ -2,7 +2,7 @@
 
 ## spawnVehicle
 
-Creates a vehicle on the server-side and returns its net ID.
+Creates a vehicle on the server-side and returns its net ID. If this is a player owned vehicle, and the persistence convar is enabled, the spawned vehicle will be persisted.
 
 ```lua
 qbx.spawnVehicle(params)
