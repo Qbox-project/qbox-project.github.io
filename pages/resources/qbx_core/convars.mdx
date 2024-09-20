@@ -5,17 +5,38 @@ import { Callout } from 'nextra/components';
 Below is a list of convars used within qbx_core.
 The value shown in the example is the default value for each convar.
 
-## qbx:enablebridge
+## qbx:enableBridge
 
 Enables or disables the qb-core bridge for compatibility with QBCore resources.
 
 ```lua
-setr qbx:enablebridge true
+setr qbx:enableBridge "true"
 ```
 
 Type: `boolean`
 
-## qbx:discordlink
+## qbx:enableQueue
+
+Enables or disables the built-in qbx_core queuing system.
+
+```lua
+set qbx:enableQueue "true"
+```
+
+Type: `boolean`
+
+## qbx:bucketLockdownMode
+
+Sets entity lockdown mode for bucket 0.
+See [`SET_ROUTING_BUCKET_ENTITY_LOCKDOWN_MODE`](https://docs.fivem.net/natives/?_0xA0F2201F) for more information.
+
+```lua
+set qbx:bucketLockdownMode "inactive"
+```
+
+Type: `'inactive' | 'relaxed' | 'strict'`
+
+## qbx:discordLink
 
 Sets the Discord link for kick messages.
 
@@ -24,21 +45,10 @@ Sets the Discord link for kick messages.
 </Callout>
 
 ```lua
-set qbx:discordlink 'discord.gg/qbox'
+set qbx:discordLink "discord.gg/qbox"
 ```
 
 Type: `string`
-
-## qbx:bucketlockdownmode
-
-Sets entity lockdown mode for bucket 0.
-See [`SET_ROUTING_BUCKET_ENTITY_LOCKDOWN_MODE`](https://docs.fivem.net/natives/?_0xA0F2201F) for more information.
-
-```lua
-set qbx:bucketlockdownmode inactive
-```
-
-Type: `'inactive' | 'relaxed' | 'strict'`
 
 ## qbx:max_jobs_per_player
 
@@ -65,7 +75,7 @@ Type: `integer`
 Controls if the `/setjob` command replaces or adds a job to a player.
 
 ```lua
-set qbx:setjob_replaces true
+set qbx:setjob_replaces "true"
 ```
 
 Type: `boolean`
@@ -75,17 +85,7 @@ Type: `boolean`
 Controls if the `/setgang` command replaces or adds a gang to a player.
 
 ```lua
-set qbx:setgang_replaces true
-```
-
-Type: `boolean`
-
-## qbx:enablequeue
-
-Enables or disables the built-in qbx_core queuing system.
-
-```lua
-set qbx:enablequeue true
+set qbx:setgang_replaces "true"
 ```
 
 Type: `boolean`
@@ -95,38 +95,38 @@ Type: `boolean`
 Controls if the `player_groups` SQL table is automatically cleaned of invalid groups (jobs/gangs) on startup.
 
 ```lua
-set qbx:cleanPlayerGroups true
+set qbx:cleanPlayerGroups "true"
 ```
 
 Type: `boolean`
 
-## qbx:allowmethodoverrides
+## qbx:allowMethodOverrides
 
 Enables or disables the ability of resources to override existing methods in player object.
 
 ```lua
-set qbx:allowmethodoverrides true
+set qbx:allowMethodOverrides "true"
 ```
 
 Type: `boolean`
 
-## qbx:disableoverridewarning
+## qbx:disableOverrideWarning
 
 Enables or disables warning from resources overriding existing methods in player object.
 
 ```lua
-set qbx:disableoverridewarning true
+set qbx:disableOverrideWarning "false"
 ```
 
 Type: `boolean`
 
-## qbx:qbx:enableVehiclePersistence
+## qbx:enableVehiclePersistence
 
 When enabled, player owned vehicles deleted by the server which have persistence enabled on them (either via having spawned using qbx.spawnVehicle or through exports.qbx_core:EnablePersistence), will be respawned with the same properties as when the vehicle was deleted.
 This is a fix to a FiveM bug which can result in vehicles randomly being deleted; ensuring that vehicles that players leave, will be there when they return.
 
 ```lua
-setr qbx:enableVehiclePersistence
+setr qbx:enableVehiclePersistence "false"
 ```
 
 Type: `boolean`
