@@ -1,3 +1,4 @@
+
 ---
 title: PlayerData
 ---
@@ -8,7 +9,95 @@ Extends: [`PlayerEntity`](./player_entity)
 
 ## Fields
 
-- source?: `integer`
+- source: `integer`
+  - Present if the player is online. Identifiable from Net events
+- optin: `boolean`
   - Present if the player is online.
-- optin?: `boolean`
-  - Present if the player is online.
+- citizenid:`string`
+	- Present on the player id, can be used to identify the player
+- money: `table`
+	- { ["moneyType":`string`] = amt:`integer` }
+	- Money type can be cash, crypto, bank, others could be added
+- charinfo:`table`
+	- firstname:`string`
+	- lastname:`string`
+	- birthdate:`string` Format is DD-MM-YYYY
+	- gender:`integer`
+	- backstory:`string`
+	- nationality:`string`
+	- phone:`string`
+		- Phone number
+	- account:`string`
+		- Bank account numebr
+	- cid:`string`
+		- cid is the same as citizenid
+- metadata:`table`
+	- health:`integer`
+	-  hunger:`integer`
+	-  thirst:`integer`
+	-  stress:`integer`
+	- isdead:`boolean`
+		- If fully dead this is true
+	- inlaststand:`boolean`
+		- Not fully dead but downed
+	- armour:`integer`
+	- ishandcuffed:`boolean`
+	- tracker:`boolean`
+		- If a tracker is present on the player
+	- injail:`boolean`
+	- jailitems:`table`
+		- Items taken from inventory when entering the jail 
+		- {["itemname":`string`] = amt:`integer`}
+	- status:`table`
+	- phone:`table`
+	- bloodtype:`string`
+	- dealerrep:`integer`
+	- craftingrep:`integer`
+	- attachmentcraftingrep:`integer`
+	- currentapartment: `table`
+		- *Unsure the table structure here*
+	- jobrep:`table`
+		- tow:`integer`
+		-  trucker:`integer`
+		-  taxi:`integer`
+		-  hotdog:`integer`
+	- callsign:`string`
+	- fingerprint:`string`
+	- walletid:`string`
+	- criminalrecord:`table`
+		- hasRecord:`boolean`
+		- *date: unsure*
+		- *unsure what this table looks like when criminal record is filled with entries*
+	- licenses:`table`
+		- id:`boolean`
+		- driver:`boolean`
+		- weapon:`boolean`
+	- inside:`table`
+		- house
+		- apartment:`table`
+			- *apartmentType: unknown*
+			- *apartmentId: unknown*
+	- phonedata:`table`
+		- SerialNumber: `string`
+		*- InstalledApps:`table` More info needed on apps table*
+- jobs:`table`
+	- ["name"] = job name:`string`name for indexing
+	- ["label"] = job label:`string`capitalized name
+	- ["payment"] = job pay:`integer` pay per hour
+	- ["onduty"] = onduty:`boolean`
+	- ["isboss"] = isboss:`boolean`
+	- ["grade"] = `table`
+		- ["name"] = job grade name: `string`
+		- ["level"] = grade level: `integer` 
+- gang:`table`
+	- ["name"] = gang name:`string`name for indexing
+	- ["label"] = gang label:`string`capitalized name
+	- ["isboss"] = isboss:`boolean`
+	- ["grade"] = `table`
+		- ["name"] = gang grade name: `string`
+		- ["level"] = grade level: `integer` 
+- gangs:`table`
+	*- List of gangs?*
+- position: `vector3 (table)`
+- items: `table`
+	- List of items depending on inventory resource, likely looks like { ["itemname"] = amt }
