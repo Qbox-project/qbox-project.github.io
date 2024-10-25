@@ -122,7 +122,7 @@ Type: `boolean`
 
 ## qbx:enableVehiclePersistence
 
-When enabled, player owned vehicles deleted by the server which have persistence enabled on them (either via having spawned using qbx.spawnVehicle or through exports.qbx_core:EnablePersistence), will be respawned with the same properties as when the vehicle was deleted.
+When enabled, player owned vehicles deleted by the server which have persistence enabled on them (either via having spawned using `qbx.spawnVehicle` or through `exports.qbx_core:EnablePersistence`), will be respawned with the same properties as when the vehicle was deleted.
 This is a fix to a FiveM bug which can result in vehicles randomly being deleted; ensuring that vehicles that players leave, will be there when they return.
 
 ```lua
@@ -130,3 +130,21 @@ setr qbx:enableVehiclePersistence "false"
 ```
 
 Type: `boolean`
+
+## qbx:acknowledge
+
+Enables or disabled the Qbox documentation console message.
+
+```lua
+set qbx:acknowledge "false"
+```
+
+Type: `boolean`
+
+## qbx:motd
+
+The message displayed to players in the chat after loading in.
+
+```lua
+set qbx:motd "<p style='padding: 1rem; background-color: rgb(30, 30, 30); border-radius: 1rem; text-align: center;'><span style='color: rgb(40, 200, 40);'>Welcome to Qbox!</span><br>Learn more at <span id='link' style='color: rgb(100, 100, 255);' onclick='window.invokeNative(\"openUrl\", \"https://docs.qbox.re/\")'>docs.qbox.re</span></p><style>span#link:hover { cursor: pointer; }</style>"
+```
