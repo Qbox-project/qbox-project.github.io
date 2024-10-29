@@ -2,11 +2,6 @@ import { Callout } from 'nextra/components';
 
 # Shared Exports
 
-<Callout type='info'>
-  Some of these exports use custom types.
-  You can learn more about those in the Types section of this resource.
-</Callout>
-
 ## GetJobs
 
 Returns the jobs table.
@@ -15,7 +10,7 @@ Returns the jobs table.
 exports.qbx_core:GetJobs()
 ```
 
-Returns: `table<string, Job>`
+Returns: [`table<string, Job>`](../types/job.mdx)
 
 ## GetGangs
 
@@ -25,7 +20,7 @@ Returns the gangs table.
 exports.qbx_core:GetGangs()
 ```
 
-Returns: `table<string, Gang>`
+Returns: [`table<string, Gang>`](../types/gang.mdx)
 
 ## GetJob
 
@@ -37,7 +32,7 @@ exports.qbx_core:GetJob(jobName)
 
 - jobName: `string`
 
-Returns: `Job?`
+Returns: [`Job?`](../types/job.mdx)
 
 ## GetGang
 
@@ -45,10 +40,10 @@ Returns the given gang if it exists.
 
 ```lua
 exports.qbx_core:GetGang(gangName)
-``` 
+```
 - gangName: `string`
 
-Returns: `Gang?`
+Returns: [`Gang?`](../types/gang.mdx)
 
 ## GetVehiclesByName
 
@@ -58,7 +53,7 @@ Returns a table mapping vehicle name to vehicle.
 exports.qbx_core:GetVehiclesByName()
 ```
 
-Returns: `table<string, Vehicle>`
+Returns: [`table<string, Vehicle>`](../types/vehicle.mdx#vehicle)
 
 ## GetVehiclesByHash
 
@@ -68,7 +63,7 @@ Returns a table mapping vehicle hash to vehicle.
 exports.qbx_core:GetVehiclesByHash()
 ```
 
-Returns: `table<number, Vehicle>`
+Returns: [`table<number, Vehicle>`](../types/vehicle.mdx#vehicle)
 
 ## GetVehiclesByCategory
 
@@ -78,7 +73,7 @@ Returns a table mapping vehicle category to vehicles.
 exports.qbx_core:GetVehiclesByCategory()
 ```
 
-Returns: `table<string, Vehicle[]>`
+Returns: [`table<string, Vehicle[]>`](../types/vehicle.mdx#vehicle)
 
 ## GetWeapons
 

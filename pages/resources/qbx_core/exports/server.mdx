@@ -19,7 +19,7 @@ Adds or overwrites the given jobs.
 exports.qbx_core:CreateJobs(jobs)
 ```
 
-- jobs: `table<string, Job>`
+- jobs: [`table<string, Job>`](../types/job.mdx)
 
 ## RemoveJob
 
@@ -52,7 +52,7 @@ Adds or overwrites the given gangs.
 exports.qbx_core:CreateGangs(gangs)
 ```
 
-- gangs: `table<string, Gang>`
+- gangs: [`table<string, Gang>`](../types/gang.mdx)
 
 ## RemoveGang
 
@@ -118,7 +118,7 @@ exports.qbx_core:GetPlayer(source)
 
 - source: `integer`
 
-Returns: `Player?`
+Returns: [`Player?`](../types/player.mdx#player)
 
 ## GetPlayerByCitizenId
 
@@ -130,7 +130,7 @@ exports.qbx_core:GetPlayerByCitizenId(citizenid)
 
 - citizenid: `string`
 
-Returns: `Player?`
+Returns: [`Player?`](../types/player.mdx#player)
 
 ## GetPlayerByPhone
 
@@ -142,7 +142,7 @@ exports.qbx_core:GetPlayerByPhone(number)
 
 - number: `string`
 
-Returns: `Player?`
+Returns: [`Player?`](../types/player.mdx#player)
 
 ## GetQBPlayers
 
@@ -152,7 +152,7 @@ Returns the player ID to Player object map of logged-in players.
 exports.qbx_core:GetQBPlayers()
 ```
 
-Returns: `table<integer, Player>`
+Returns: [`table<integer, Player>`](../types/player.mdx#player)
 
 ## GetPlayersData
 
@@ -162,7 +162,7 @@ Returns all PlayerData tables for all active players.
 exports.qbx_core:GetPlayersData()
 ```
 
-Returns: `PlayerData[]`
+Returns: [`PlayerData[]`](../types/player.mdx#playerdata)
 
 ## GetDutyCountJob
 
@@ -359,7 +359,7 @@ Returns: `table<string, boolean>`
 
 ## IsOptin
 
-Returns whether the given player is optin to admin reports. 
+Returns whether the given player is optin to admin reports.
 
 ```lua
 exports.qbx_core:IsOptin(source)
@@ -371,7 +371,7 @@ Returns: `boolean`
 
 ## ToggleOptin
 
-Opts the given player in and out of admin reports. 
+Opts the given player in and out of admin reports.
 
 ```lua
 exports.qbx_core:ToggleOptin(source)
@@ -442,7 +442,7 @@ exports.qbx_core:Login(source, citizenid, newData)
 
 - source: `integer`
 - citizenid?: `string`
-- newData?: `PlayerEntity`
+- newData?: [`PlayerEntity`](../types/player.mdx#playerentity)
 
 Returns: `boolean`
 
@@ -456,7 +456,7 @@ exports.qbx_core:GetOfflinePlayer(citizenid)
 
 - citizenid: `string`
 
-Returns: `Player?`
+Returns: [`Player?`](../types/player.mdx#player)
 
 ## Logout
 
@@ -479,7 +479,7 @@ exports.qbx_core:CreatePlayer(playerData, offline)
 - playerData: `PlayerData`
 - offline: `boolean`
 
-Returns: `Player`
+Returns: [`Player`](../types/player.mdx#player)
 
 ## Save
 
@@ -499,7 +499,7 @@ Saves the given PlayerData to the database.
 exports.qbx_core:SaveOffline(playerData)
 ```
 
-- playerData: `PlayerEntity`
+- playerData: [`PlayerEntity`](../types/player.mdx#playerentity)
 
 ## DeleteCharacter
 
@@ -540,7 +540,7 @@ exports.qbx_core:UpsertJobData(jobName, data)
 ```
 
 - jobName: `string`
-- data: `JobData`
+- data: [`JobData`](../types/job.mdx#jobdata)
 
 ## UpsertGangData
 
@@ -555,7 +555,7 @@ exports.qbx_core:UpsertGangData(gangName, data)
 ```
 
 - gangName: `string`
-- data: `GangData`
+- data: [`GangData`](../types/gang.mdx#gangdata)
 
 ## UpsertJobGrade
 
@@ -570,7 +570,7 @@ exports.qbx_core:UpsertJobGrade(jobName, grade, data)
 ```
 - jobName: `string`
 - grade: `integer`
-- data: `JobGradeData`
+- data: [`JobGradeData`](../types/job.mdx#jobgradedata)
 
 ## UpsertGangGrade
 
@@ -586,7 +586,7 @@ exports.qbx_core:UpsertGangGrade(gangName, grade, data)
 
 - gangName: `string`
 - grade: `integer`
-- data: `GangGradeData`
+- data: [`GangGradeData`](../types/gang.mdx#ganggradedata)
 
 ## RemoveJobGrade
 
@@ -757,7 +757,7 @@ exports.qbx_core:GetGroupMembers(group, type)
 ```
 
 - group: `string`
-- type: `job|gang`
+- type: `job | gang`
 
 Returns:
 
