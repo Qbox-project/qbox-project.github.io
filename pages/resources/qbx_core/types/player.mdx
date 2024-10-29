@@ -42,24 +42,9 @@ Extends [`PlayerEntity`](#playerentity)
   - phone: `string`
   - account: `string`
   - card: `number`
-- job: `table`
-  - name: `string`
-  - label: `string`
-  - payment: `number`
-  - type: `string`
-  - onduty: `boolean`
-  - isboss: `boolean`
-  - grade: `table`
-    - name: `string`
-    - level: `number`
+- job: [`PlayerJob`](#playerjob)
 - jobs: `table<string, integer>` maps job name to job grade that the player has. Unemployed not included.
-- gang: `table`
-  - name: `string`
-  - label: `string`
-  - isboss: `boolean`
-  - grade: `table`
-    - name: `string`
-    - level: `number`
+- gang: [`PlayerGang`](#playergang)
 - gangs: `table<string, integer>` maps gang name to gang grade that the player has. None gang not included.
 - position: `vector4`
 - metadata: `table`
