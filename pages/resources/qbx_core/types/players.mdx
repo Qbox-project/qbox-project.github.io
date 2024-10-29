@@ -1,10 +1,28 @@
----
-title: PlayerEntity
----
+# Players
 
-# PlayerEntity
+## Player
 
-## Fields
+**Fields**
+
+- Functions: `table`
+  - Deprecated.
+- PlayerData: [`PlayerData`](#playerdata)
+- Offline: `boolean`
+
+## PlayerData
+
+Extends [`PlayerEntity`](#playerentity)
+
+**Fields**
+
+- source?: `integer`
+  - Present if the player is online.
+- optin?: `boolean`
+  - Present if the player is online.
+
+## PlayerEntity
+
+**Fields**
 
 - citizenid: `string`
 - license: `string`
@@ -92,3 +110,28 @@ title: PlayerEntity
 - items: `table`
   - Deprecated.
 - lastLoggedOut: `integer`
+
+## PlayerJob
+
+**Fields**
+
+- name: `string`
+- label: `string`
+- payment: `number`
+- type?: `string`
+- onduty: `boolean`
+- isboss: `boolean`
+- grade: `table`
+  - name: `string`
+  - level: `number`
+
+## PlayerGang
+
+**Fields**
+
+- name: `string`
+- label: `string`
+- isboss: `boolean`
+- grade: `table`
+  - name: `string`
+  - level: `number`
