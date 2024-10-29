@@ -1,0 +1,27 @@
+# Jobs
+
+## JobData
+
+**Fields**
+
+- label: `string`
+- type?: `string`
+- defaultDuty: `boolean`
+- offDutyPay: `boolean`
+
+## JobGradeData
+
+**Fields**
+
+- name: `string`
+- isboss?: `boolean`
+- bankAuth?: `boolean`
+- payment: `number`
+
+## Job
+
+Extends [`JobData`](#jobdata)
+
+**Fields**
+
+- grades: [`table<integer, JobGradeData>`](#jobgradedata)

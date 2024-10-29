@@ -1,0 +1,23 @@
+# Gangs
+
+## GangData
+
+**Fields**
+
+- label: `string`
+
+## GangGradeData
+
+**Fields**
+
+- name: `string`
+- isboss?: `boolean`
+- bankAuth?: `boolean`
+
+## Gang
+
+Extends [`GangData`](#gangdata)
+
+**Fields**
+
+- grades: [`table<integer, GangGradeData>`](#ganggradedata)
