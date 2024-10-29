@@ -94,6 +94,19 @@ AddEventHandler('QBCore:Server:OnMoneyChange', function(source, moneyType, amoun
 - operation: `'add' | 'remove' | 'set'`
 - reason: `string`
 
+### qbx_core:server:onSetMetaData
+
+Triggered when player.Functions.setMetaData() is used.
+
+```lua
+AddEventHandler('qbx_core:server:onSetMetaData', function(key, oldValue, newValue, source) end)
+```
+
+- key: `string`
+- oldValue: `any`
+- newValue: `any`
+- source: `number`
+
 ## Networked Events
 
 ### QBCore:Server:OnPlayerLoaded
@@ -103,16 +116,3 @@ Triggered when a player has finished loading.
 ```lua
 RegisterNetEvent('QBCore:Server:OnPlayerLoaded', function() end)
 ```
-
-### qbx_core:server:onSetMetaData
-
-Triggered when player.Functions.setMetaData() is used.
-
-```lua
-RegisterNetEvent('qbx_core:server:onSetMetaData', function(key, oldValue, newValue, source) end)
-```
-
-- key: `string`
-- oldValue: `any`
-- newValue: `any`
-- source: `number`
