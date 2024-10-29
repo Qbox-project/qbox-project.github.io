@@ -9,6 +9,14 @@
 - defaultDuty: `boolean`
 - offDutyPay: `boolean`
 
+## Job
+
+Extends [`JobData`](#jobdata)
+
+**Fields**
+
+- grades: [`table<integer, JobGradeData>`](#jobgradedata)
+
 ## JobGradeData
 
 **Fields**
@@ -17,11 +25,3 @@
 - isboss?: `boolean`
 - bankAuth?: `boolean`
 - payment: `number`
-
-## Job
-
-Extends [`JobData`](#jobdata)
-
-**Fields**
-
-- grades: [`table<integer, JobGradeData>`](#jobgradedata)
