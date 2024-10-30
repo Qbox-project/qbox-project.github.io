@@ -803,3 +803,40 @@ exports.qbx_core:GetVehicleClass(hash)
 ```
 
 - hash: `number`
+
+## SearchPlayers
+
+Searches both online and offline players on a set of filters and returns players which match all filtered values.
+
+Filters:
+- license?: license string. i.e. 'license2:xxx'
+- job?: name of the job
+- gang?: name of the gang
+- metadata?: `table<string, number|string|boolean>`
+  - strict?: `boolean` if true, metadata number values match on exact equivalence, else numbers match if value is greater than or equal to filter.
+
+```lua
+exports.qbx_core:SearchPlayers(filters)
+```
+
+- filters: `table<string, any>`
+
+Returns:
+
+- [`Player[]`](../types/player.mdx#player) 
+
+## CreateSessionId
+
+Sets the sessionId statebag on an entity to a unique number.
+SessionIds are useful in cases where an entity could be deleted and recreated but needs a stable identifier such as vehicle persistence.
+
+```lua
+exports.qbx_core:CreateSessionId(entity)
+```
+
+- entity: `integer`
+
+Returns:
+
+- sessionId: `integer`  
+
