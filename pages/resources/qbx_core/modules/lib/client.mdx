@@ -22,6 +22,10 @@ qbx.drawText2d(params)
     - Default: `1.0`
   - height?: `number`
     - Default: `1.0`
+  - enableDropShadow?: `boolean`
+    - Enables a black drop shadow for the text.
+  - enableOutline?: `boolean`
+    - Enables a black outline for the text.
 
 ## drawText3d
 
@@ -35,14 +39,18 @@ qbx.drawText3d(params)
   - text: `string`
   - coords: `vector3`
     - In-world coordinates.
-  - scale?: `integer`
-    - Default: `0.35`
+  - scale?: `vector2`
+    - Default: `vec2(0.35, 0.35)`
   - font?: `integer`
     - Default: `4`
   - color?: `vector4`
     - An RGBA value; white by default.
   - disableDrawRect?: `boolean`
     - Disables drawing a rectangle background for the text.
+  - enableDropShadow?: `boolean`
+    - Enables a black drop shadow for the text.
+  - enableOutline?: `boolean`
+    - Enables a black outline for the text.
 
 ## getEntityAndNetIdFromBagName
 
