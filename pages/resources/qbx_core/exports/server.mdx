@@ -108,6 +108,18 @@ exports.qbx_core:GetSource(identifier)
 
 Returns: `integer`
 
+## GetuserId
+
+Returns the userId of the player that has the given identifier, or 0 if the player is not in the server.
+
+```lua
+exports.qbx_core:GetUserId(identifier)
+```
+
+- identifier: `string`
+
+Returns: `integer`
+
 ## GetPlayer
 
 Returns the Player object for the given player ID or identifier.
@@ -129,6 +141,18 @@ exports.qbx_core:GetPlayerByCitizenId(citizenid)
 ```
 
 - citizenid: `string`
+
+Returns: [`Player?`](../types/player.mdx#player)
+
+## GetPlayerByUserId
+
+Returns the Player object for the given userId.
+
+```lua
+exports.qbx_core:GetPlayerByUserId(citizenid)
+```
+
+- userId: `string`
 
 Returns: [`Player?`](../types/player.mdx#player)
 
@@ -163,6 +187,63 @@ exports.qbx_core:GetPlayersData()
 ```
 
 Returns: [`PlayerData[]`](../types/player.mdx#playerdata)
+
+## SetPlayerData
+
+Sets a specific players PlayerData key to a new value.
+
+```lua
+exports.qbx_core:SetPlayerData(source, key, value)
+```
+
+- source: `integer`
+- key: `string`
+- value: `any`
+
+## UpdatePlayerData
+
+Triggers the players PlayerData to update.
+
+```lua
+exports.qbx_core:UpdatePlayerData(source)
+```
+
+- source: `integer`
+
+## GetMetadata
+
+Gets a specific players metadata value.
+
+```lua
+exports.qbx_core:GetMetadata(source, metadata)
+```
+
+- source: `integer`
+- metadata: `string`
+
+## SetMetadata
+
+Sets a specific players metadata key to a new value.
+
+```lua
+exports.qbx_core:SetMetadata(source, metadata, value)
+```
+
+- source: `integer`
+- metadata: `string`
+- value: `any`
+
+## SetCharInfo
+
+Sets a specific players character information.
+
+```lua
+exports.qbx_core:SetMetadata(source, metadata, value)
+```
+
+- source: `integer`
+- charInfo: `string`
+- value: `any`
 
 ## GetDutyCountJob
 
@@ -618,6 +699,29 @@ exports.qbx_core:RemoveGangGrade(gangName, grade)
 - gangName: `string`
 - grade: `integer`
 
+## SetJob
+
+Overwrites current primary job with a new job. Removing the player from their current primary job.
+
+```lua
+exports.qbx_core:SetJob(source, jobName, grade)
+```
+
+- source: `integer`
+- jobName: `string`
+- grade: `integer`
+
+## SetJobDuty
+
+Sets the player's duty status.
+
+```lua
+exports.qbx_core:SetJobDuty(source, onDuty)
+```
+
+- identifier: `integer`
+- onDuty: `boolean`
+
 ## SetPlayerPrimaryJob
 
 Sets the given player's primary job to the given job, only if they already have it.
@@ -652,6 +756,18 @@ exports.qbx_core:RemovePlayerFromJob(citizenid, jobName)
 
 - citizenid: `string`
 - jobName: `string`
+
+## SetGang
+
+Overwrites current primary gang with a new job. Removing the player from their current primary gang.
+
+```lua
+exports.qbx_core:SetGang(source, jobName, gangName)
+```
+
+- source: `integer`
+- gangName: `string`
+- grade: `integer`
 
 ## SetPlayerPrimaryGang
 
@@ -823,7 +939,7 @@ exports.qbx_core:SearchPlayers(filters)
 
 Returns:
 
-- [`Player[]`](../types/player.mdx#player) 
+- [`Player[]`](../types/player.mdx#player)
 
 ## CreateSessionId
 
@@ -838,5 +954,72 @@ exports.qbx_core:CreateSessionId(entity)
 
 Returns:
 
-- sessionId: `integer`  
+- sessionId: `integer`
 
+## GetMoney
+
+Gets the specific money type of a player.
+
+```lua
+exports.qbx_core:AddMoney(souce, moneyType, amount, reason)
+```
+
+- source: `integer`
+- moneyType: `'cash' | 'bank' | 'crypto'`
+- amount: `number`
+- reason?: `string`
+
+Returns:
+
+- success: `boolean`
+
+## AddMoney
+
+Adds the specific money type to a player.
+
+```lua
+exports.qbx_core:AddMoney(souce, moneyType, amount, reason)
+```
+
+- source: `integer`
+- moneyType: `'cash' | 'bank' | 'crypto'`
+- amount: `number`
+- reason?: `string`
+
+Returns:
+
+- success: `boolean`
+
+## RemoveMoney
+
+Removes the specific money type from a player.
+
+```lua
+exports.qbx_core:RemoveMoney(souce, moneyType, amount, reason)
+```
+
+- source: `integer`
+- moneyType: `'cash' | 'bank' | 'crypto'`
+- amount: `number`
+- reason?: `string`
+
+Returns:
+
+- success: `boolean`
+
+## SetMoney
+
+Sets the specific money type for a player.
+
+```lua
+exports.qbx_core:SetMoney(souce, moneyType, amount, reason)
+```
+
+- source: `integer`
+- moneyType: `'cash' | 'bank' | 'crypto'`
+- amount: `number`
+- reason?: `string`
+
+Returns:
+
+- success: `boolean`

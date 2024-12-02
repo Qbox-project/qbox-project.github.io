@@ -50,8 +50,10 @@ Returns: [`Gang?`](../types/gang.mdx)
 Returns a table mapping vehicle name to vehicle.
 
 ```lua
-exports.qbx_core:GetVehiclesByName()
+exports.qbx_core:GetVehiclesByName(vehicle)
 ```
+
+- vehicle?: `string`
 
 Returns: [`table<string, Vehicle>`](../types/vehicle.mdx#vehicle)
 
@@ -60,8 +62,10 @@ Returns: [`table<string, Vehicle>`](../types/vehicle.mdx#vehicle)
 Returns a table mapping vehicle hash to vehicle.
 
 ```lua
-exports.qbx_core:GetVehiclesByHash()
+exports.qbx_core:GetVehiclesByHash(vehicle)
 ```
+
+- vehicle?: `number`
 
 Returns: [`table<number, Vehicle>`](../types/vehicle.mdx#vehicle)
 
@@ -80,8 +84,10 @@ Returns: [`table<string, Vehicle[]>`](../types/vehicle.mdx#vehicle)
 Returns the weapons table.
 
 ```lua
-exports.qbx_core:GetWeapons()
+exports.qbx_core:GetWeapons(weapon)
 ```
+
+- weapon?: `number`
 
 Returns: `table<number, Weapon>`
 
