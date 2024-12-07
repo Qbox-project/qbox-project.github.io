@@ -941,6 +941,16 @@ Returns:
 
 - [`Player[]`](../types/player.mdx#player)
 
+### Example Usage
+Searching for the value of a nested metadata key
+```lua
+local licensedDrivers = exports.qbx_core:SearchPlayers({
+  metadata = {
+    ['licences.driver'] = true
+  }
+})
+```
+
 ## CreateSessionId
 
 Sets the sessionId statebag on an entity to a unique number.
