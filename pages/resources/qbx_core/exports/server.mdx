@@ -961,17 +961,15 @@ Returns:
 Gets the specific money type of a player.
 
 ```lua
-exports.qbx_core:AddMoney(souce, moneyType, amount, reason)
+exports.qbx_core:GetMoney(identifier, moneyType)
 ```
 
-- source: `integer`
+- identifier: source | citizenid
 - moneyType: `'cash' | 'bank' | 'crypto'`
-- amount: `number`
-- reason?: `string`
 
 Returns:
 
-- success: `boolean`
+- amount: `number` or false if invalid money type or unable to find player
 
 ## AddMoney
 
