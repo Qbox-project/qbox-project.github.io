@@ -193,10 +193,10 @@ Returns: [`PlayerData[]`](../types/player.mdx#playerdata)
 Sets a specific players PlayerData key to a new value.
 
 ```lua
-exports.qbx_core:SetPlayerData(source, key, value)
+exports.qbx_core:SetPlayerData(identifier, key, value)
 ```
 
-- source: `integer`
+- identifier: source | citizenid
 - key: `string`
 - value: `any`
 
@@ -205,20 +205,20 @@ exports.qbx_core:SetPlayerData(source, key, value)
 Triggers the players PlayerData to update.
 
 ```lua
-exports.qbx_core:UpdatePlayerData(source)
+exports.qbx_core:UpdatePlayerData(identifier)
 ```
 
-- source: `integer`
+- identifier: source | citizenid
 
 ## GetMetadata
 
 Gets a specific players metadata value.
 
 ```lua
-exports.qbx_core:GetMetadata(source, metadata)
+exports.qbx_core:GetMetadata(identifier, metadata)
 ```
 
-- source: `integer`
+- identifier: source | citizenid
 - metadata: `string`
 
 ## SetMetadata
@@ -226,10 +226,10 @@ exports.qbx_core:GetMetadata(source, metadata)
 Sets a specific players metadata key to a new value.
 
 ```lua
-exports.qbx_core:SetMetadata(source, metadata, value)
+exports.qbx_core:SetMetadata(identifier, metadata, value)
 ```
 
-- source: `integer`
+- identifier: source | citizenid
 - metadata: `string`
 - value: `any`
 
@@ -238,10 +238,10 @@ exports.qbx_core:SetMetadata(source, metadata, value)
 Sets a specific players character information.
 
 ```lua
-exports.qbx_core:SetMetadata(source, metadata, value)
+exports.qbx_core:SetCharInfo(identifier, charInfo, value)
 ```
 
-- source: `integer`
+- identifier: source | citizenid
 - charInfo: `string`
 - value: `any`
 
@@ -704,10 +704,10 @@ exports.qbx_core:RemoveGangGrade(gangName, grade)
 Overwrites current primary job with a new job. Removing the player from their current primary job.
 
 ```lua
-exports.qbx_core:SetJob(source, jobName, grade)
+exports.qbx_core:SetJob(identifier, jobName, grade)
 ```
 
-- source: `integer`
+- identifier: source | citizenid
 - jobName: `string`
 - grade: `integer`
 
@@ -716,10 +716,10 @@ exports.qbx_core:SetJob(source, jobName, grade)
 Sets the player's duty status.
 
 ```lua
-exports.qbx_core:SetJobDuty(source, onDuty)
+exports.qbx_core:SetJobDuty(identifier, onDuty)
 ```
 
-- identifier: `integer`
+- identifier: source | citizenid
 - onDuty: `boolean`
 
 ## SetPlayerPrimaryJob
@@ -762,10 +762,10 @@ exports.qbx_core:RemovePlayerFromJob(citizenid, jobName)
 Overwrites current primary gang with a new job. Removing the player from their current primary gang.
 
 ```lua
-exports.qbx_core:SetGang(source, jobName, gangName)
+exports.qbx_core:SetGang(identifier, jobName, gangName)
 ```
 
-- source: `integer`
+- identifier: source | citizenid
 - gangName: `string`
 - grade: `integer`
 
@@ -986,10 +986,10 @@ Returns:
 Adds the specific money type to a player.
 
 ```lua
-exports.qbx_core:AddMoney(souce, moneyType, amount, reason)
+exports.qbx_core:AddMoney(identifier, moneyType, amount, reason)
 ```
 
-- source: `integer`
+- identifier: source | citizenid
 - moneyType: `'cash' | 'bank' | 'crypto'`
 - amount: `number`
 - reason?: `string`
@@ -1003,10 +1003,10 @@ Returns:
 Removes the specific money type from a player.
 
 ```lua
-exports.qbx_core:RemoveMoney(souce, moneyType, amount, reason)
+exports.qbx_core:RemoveMoney(identifier, moneyType, amount, reason)
 ```
 
-- source: `integer`
+- identifier: source | citizenid
 - moneyType: `'cash' | 'bank' | 'crypto'`
 - amount: `number`
 - reason?: `string`
@@ -1020,10 +1020,10 @@ Returns:
 Sets the specific money type for a player.
 
 ```lua
-exports.qbx_core:SetMoney(souce, moneyType, amount, reason)
+exports.qbx_core:SetMoney(identifier, moneyType, amount, reason)
 ```
 
-- source: `integer`
+- identifier: source | citizenid
 - moneyType: `'cash' | 'bank' | 'crypto'`
 - amount: `number`
 - reason?: `string`
