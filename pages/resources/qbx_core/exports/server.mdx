@@ -108,7 +108,7 @@ exports.qbx_core:GetSource(identifier)
 
 Returns: `integer`
 
-## GetuserId
+## GetUserId
 
 Returns the userId of the player that has the given identifier, or 0 if the player is not in the server.
 
@@ -196,7 +196,7 @@ Sets a specific players PlayerData key to a new value.
 exports.qbx_core:SetPlayerData(identifier, key, value)
 ```
 
-- identifier: source | citizenid
+- identifier: `source | citizenid`
 - key: `string`
 - value: `any`
 
@@ -208,7 +208,7 @@ Triggers the players PlayerData to update.
 exports.qbx_core:UpdatePlayerData(identifier)
 ```
 
-- identifier: source | citizenid
+- identifier: `source | citizenid`
 
 ## GetMetadata
 
@@ -218,7 +218,7 @@ Gets a specific players metadata value.
 exports.qbx_core:GetMetadata(identifier, metadata)
 ```
 
-- identifier: source | citizenid
+- identifier: `source | citizenid`
 - metadata: `string`
 
 ## SetMetadata
@@ -229,7 +229,7 @@ Sets a specific players metadata key to a new value.
 exports.qbx_core:SetMetadata(identifier, metadata, value)
 ```
 
-- identifier: source | citizenid
+- identifier: `source | citizenid`
 - metadata: `string`
 - value: `any`
 
@@ -241,7 +241,7 @@ Sets a specific players character information.
 exports.qbx_core:SetCharInfo(identifier, charInfo, value)
 ```
 
-- identifier: source | citizenid
+- identifier: `source | citizenid`
 - charInfo: `string`
 - value: `any`
 
@@ -707,7 +707,7 @@ Overwrites current primary job with a new job. Removing the player from their cu
 exports.qbx_core:SetJob(identifier, jobName, grade)
 ```
 
-- identifier: source | citizenid
+- identifier: `source | citizenid`
 - jobName: `string`
 - grade: `integer`
 
@@ -719,7 +719,7 @@ Sets the player's duty status.
 exports.qbx_core:SetJobDuty(identifier, onDuty)
 ```
 
-- identifier: source | citizenid
+- identifier: `source | citizenid`
 - onDuty: `boolean`
 
 ## SetPlayerPrimaryJob
@@ -765,7 +765,7 @@ Overwrites current primary gang with a new job. Removing the player from their c
 exports.qbx_core:SetGang(identifier, jobName, gangName)
 ```
 
-- identifier: source | citizenid
+- identifier: `source | citizenid`
 - gangName: `string`
 - grade: `integer`
 
@@ -974,7 +974,7 @@ Gets the specific money type of a player.
 exports.qbx_core:GetMoney(identifier, moneyType)
 ```
 
-- identifier: source | citizenid
+- identifier: `source | citizenid`
 - moneyType: `'cash' | 'bank' | 'crypto'`
 
 Returns:
@@ -989,7 +989,7 @@ Adds the specific money type to a player.
 exports.qbx_core:AddMoney(identifier, moneyType, amount, reason)
 ```
 
-- identifier: source | citizenid
+- identifier: `source | citizenid`
 - moneyType: `'cash' | 'bank' | 'crypto'`
 - amount: `number`
 - reason?: `string`
@@ -1006,7 +1006,7 @@ Removes the specific money type from a player.
 exports.qbx_core:RemoveMoney(identifier, moneyType, amount, reason)
 ```
 
-- identifier: source | citizenid
+- identifier: `source | citizenid`
 - moneyType: `'cash' | 'bank' | 'crypto'`
 - amount: `number`
 - reason?: `string`
@@ -1023,7 +1023,7 @@ Sets the specific money type for a player.
 exports.qbx_core:SetMoney(identifier, moneyType, amount, reason)
 ```
 
-- identifier: source | citizenid
+- identifier: `source | citizenid`
 - moneyType: `'cash' | 'bank' | 'crypto'`
 - amount: `number`
 - reason?: `string`
