@@ -2,30 +2,49 @@ import {Steps, Callout} from 'nextra/components'
 
 # Converting from QBCore
 
-<Steps>
-### Check your job grades in `qbx_core/shared/jobs.lua`.
-  In Qbox, job grades are numbers without quotations, whereas in QBCore they are strings.
-### Configure ox_inventory and convert your database.
-  Back it up first! ([see ox_inventory documentation](https://overextended.dev/ox_inventory/Frameworks/qb))
-### Qbox has multicharacter built into qbx_core.
-  If you want to keep using your own multicharacter resource, configure qbx_core accordingly.
-  Otherwise you can disable or delete your old multicharacter resource.
-### Qbox has a queue system built into qbx_core.
-  If you want to keep using your own queue system, specify `set qbx:enablequeue "false"` inside your cfg file.
-  Otherwise you can disable or delete your old queue system.
-### Run the SQL file provided with qbx_core
-This will alter the players table in the following ways:
-- Add to the `players` table to add the new column `last_logged_out`
-- Change the collation of players.citizenid column to `utf8mb4_unicode_ci`
+<Callout type="info">
+  We highly recommend installing Qbox via the recipe to avoid as many issues as possible. \
+  For detailed instructions, refer to [Installation](../pages/installation.mdx).
+</Callout>
 
-Note: You may need to manually change the collation of other tables' citizenid column if you get an error that a foreign key constraint was violated.
-### Configure multijob/multigang
-  Qbox has a multijob/gang system built into core that cannot be disabled. By default, players may only be in one job & gang. This can be overriden by setting `qbx:max_jobs_per_player` and `qbx:max_gangs_per_player` in server.cfg.
-  Do not use an external multijob/gang resource that isn't guaranteed by the developer to be Qbox compatible.
-  Using incompatible multijobs or resources which modify core's database tables may lead to data corruption. First, double check that the player.citizenid column in your database has collation `utf8mb4_unicode_ci`. If not, change it.
-  Then, run qbx_core.sql to create the new player_groups table. Start the server and type `convertjobs` into the txAdmin console once the server is running to populate the player_groups table.
-  This needs to be done even if you don't already have a multijob/gang system.
+<Steps>
+  ### Update your server configuration files.
+
+  When installing Qbox via the recipe, the `server.cfg`, `ox.cfg`, `permissions.cfg`, and `voice.cfg` files will be download automatically. If you are not using the recipe, you will need to manually add/update these.
+  See the [Qbox txAdminRecipe repository](https://github.com/Qbox-project/txAdminRecipe) for the latest versions of these files.
+
+  ### Update your job grades in `qbx_core/shared/jobs.lua`.
+
+  In Qbox, job grades are numbers without quotations, whereas in QBCore they are strings. These will need to be changed.
+
+  ### Configure ox_inventory and convert your database.
+
+  Back it up first! ([see ox_inventory documentation](https://overextended.dev/ox_inventory/Frameworks/qb))
+
+  ### Update qbx_core's job and gang shared files.
+
+  In Qbox, the job and gang grades are numbers without quotations whereas in QBCore, they are strings. These will need to be changed. The job and gang shared files are located in `qbx_core/shared/jobs.lua` and `qbx_core/shared/gangs.lua` respectively.
+
+  ### Configure qbx_core's built-in functionalities.
+
+  Qbox has a multicharacter, queue, multijob, and Discord rich presense built into qbx_core. By default, all of these are enabled. If you wish to disable or customize these, do the following:
+  - To disable the multicharacter system, open `qbx_core/config/client.lua` and set `useExternalCharacters` to `false`.
+  - To disable the queue system, open the `server.cfg` file and set `qbx:enablequeue` to `false`. To customize the queue system further, open `qbx_core/config/queue.lua`.
+  - To disable or customize the Discord rich presents, open `qbx_core/config/client.lua`, scroll all the way down, and edit the `discord` table.
+  - To customize the multijob/multigang system, open the `server.cfg` file and set `qbx:max_jobs_per_player` and `qbx:max_gangs_per_player` to the desired values. This feature **cannot** be disabled.
+	- First, double check that the player.citizenid column in your database has the proper `utf8mb4_unicode_ci` collation. If not, change it. Then, run the `qbx_core.sql` file to create the new player_groups table.
+	- Start the server and then type `convertjobs` into the txAdmin colsone once the server is running to populare the player_groups table.
+	- **Do not use external multijob/multigang resources that aren't guaranteed to be Qbox compatible.** Using incompatible multijobs or resources which modify the core's database tables may lead to data corruption!
+
+  ### Run the SQL file provided with qbx_core
+
+  This will alter the players table in the following ways:
+  - Add to the `players` table to add the new column `last_logged_out`
+  - Change the collation of players.citizenid column to `utf8mb4_unicode_ci`
+
+  _Note: You may need to manually change the collation of other tables' citizenid column if you get an error that a foreign key constraint was violated._
 </Steps>
+
 ## Migrating a resource from QBCore to Qbox
 
 <Callout type="info">
@@ -35,7 +54,7 @@ Note: You may need to manually change the collation of other tables' citizenid c
 Within Qbox, the core object no longer exists.
 Instead, the data can be accessed via a combination of export functions and imported modules.
 
-1. Import the needed modules from qbx_core to supply replacement functions for ones from QBCore;
+1. Import the needed modules from qbx_core to supply replacement functions for ones from QBCore
 2. Replace calls to QBCore one by one with calls to the imported modules and exported functions. Both can be used at the same time, so conversion can be done partially, or over time.
 
 ### Common replacements
